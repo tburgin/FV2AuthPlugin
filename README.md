@@ -80,6 +80,16 @@ Authorization Plugins give us access to a gold mine of information during the lo
 
 Now that we have the user's credenials, all we need is an admin account to authorize FV2 addition. Since we run the FV2AuthPlugin in privileged mode we have the ability to create a temporary local admin user and set it's password.
 
+Currently I have a hardcoded username and password. This should be one of the first issue fixes.
+
+```objective-c
+NSString *temp_admin_username = @"fv2authplugin";
+```
+
+```objective-c       
+NSString *temp_password = @"password123";
+```
+
 The /usr/lib/libodfde.dylib has an undocumented symbol ` ODFDEAddUser `. Thanks to @russellhancox for publishing the correct variables needed in the macdestoryer repo:
 
 https://github.com/google/macops/tree/master/macdestroyer

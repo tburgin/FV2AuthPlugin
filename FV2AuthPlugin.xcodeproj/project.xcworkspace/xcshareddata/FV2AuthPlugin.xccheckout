@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CC495FA2-0F98-4667-8729-2C5984C52A54</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FV2AuthPlugin</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2CE45EA16A143F42CD8266EAB35FFB4FC8DE236D</key>
+		<string>https://github.com/tburgin/FV2AuthPlugin.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FV2AuthPlugin.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2CE45EA16A143F42CD8266EAB35FFB4FC8DE236D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/tburgin/FV2AuthPlugin.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2CE45EA16A143F42CD8266EAB35FFB4FC8DE236D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2CE45EA16A143F42CD8266EAB35FFB4FC8DE236D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FV2AuthPlugin</string>
+		</dict>
+	</array>
+</dict>
+</plist>
