@@ -51,12 +51,13 @@ FV2AuthPlugin is called from the system.login.console in the authorization datab
 
 ## Package Installer
 
-You can grab the Packages file here to build a pkg.
+You can grab the installer here. This binary does have code signing. The installer is unsigned.
+https://github.com/tburgin/FV2AuthPlugin/releases/download/v0.1-beta/FV2AuthPlugin-Installer.pkg
 
 
 ## Manual Install
 
-1.  Build the FV2AuthPlugin.bundle with xcode from the source or download the latest binary from: https://github.com/tburgin/FV2AuthPlugin/releases
+1.  Build the FV2AuthPlugin.bundle with xcode from the source or download the latest binary from: https://github.com/tburgin/FV2AuthPlugin/releases. If you build your own, make sure to sign the bundle. The login window will reset every login if the bundle is not signed.
 
 2. Copy the plugin to the SecurityAgentPlugins folder
 ```sh
