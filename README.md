@@ -6,7 +6,7 @@ Here is an Authorization Plugin that is designed to automatically, seamlessly an
 
 The plugin must live here: `/Library/Security/SecurityAgentPlugins/FV2AuthPlugin.bundle`
 
-The Authorization Plugin is called from the system.login.console in the authorization databse.
+FV2AuthPlugin is called from the system.login.console in the authorization databse.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -48,6 +48,26 @@ The Authorization Plugin is called from the system.login.console in the authoriz
 </dict>
 </plist>
 ```
+
+### Manual Install
+
+1.  Build the FV2AuthPlugin.bundle with xcode from the source or download the latest binary from: https://github.com/tburgin/FV2AuthPlugin/releases
+
+2. Copy the plugin to the SecurityAgentPlugins folder
+```sh
+sudo cp -r ~/Downloads/FV2AuthPlugin.bundle /Library/Security/SecurityAgentPlugins/;
+```
+
+3. Set Proper Ownership
+```sh
+sudo chown -R root:wheel /Library/Security/SecurityAgentPlugins/FV2AuthPlugin.bundle;
+```
+
+4. Set Proper Permissions
+```sh
+sudo chmod -R 755 /Library/Security/SecurityAgentPlugins/FV2AuthPlugin.bundle;
+```
+
 ## How does it work?
 
 Authorization Plugins give us access to a gold mine of information during the login process. We are able to capture the login user's username and clear text password. The FV2AuthPlugin runs after the builtin:authenticate,privileged runs, so we know that password used is valid.
