@@ -51,8 +51,8 @@ FV2AuthPlugin is called from the system.login.console in the authorization datab
 
 ## Package Installer
 
-You can grab the installer here. This binary does have code signing. The installer is unsigned.
-https://github.com/tburgin/FV2AuthPlugin/releases/download/v0.1-beta/FV2AuthPlugin-Installer.pkg
+You can grab the installer here. This binary does have code signing. The installer is unsigned. An uninstaller is included.
+https://github.com/tburgin/FV2AuthPlugin/releases
 
 
 ## Manual Install
