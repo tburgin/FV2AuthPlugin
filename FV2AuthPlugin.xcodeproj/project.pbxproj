@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D28055361A8AD195006880C9 /* libodfde.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D28055351A8AD195006880C9 /* libodfde.dylib */; };
+		D28055381A8AD19B006880C9 /* libcsfde.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D28055371A8AD19B006880C9 /* libcsfde.dylib */; };
+		D28735D21A8A83080071A420 /* Main.m in Sources */ = {isa = PBXBuildFile; fileRef = D28735D11A8A83080071A420 /* Main.m */; };
+		D29783991A8AD90500A42A81 /* CreateLocalAdminUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D29783981A8AD90500A42A81 /* CreateLocalAdminUser.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D28055351A8AD195006880C9 /* libodfde.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libodfde.dylib; path = usr/lib/libodfde.dylib; sourceTree = SDKROOT; };
+		D28055371A8AD19B006880C9 /* libcsfde.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcsfde.dylib; path = usr/lib/libcsfde.dylib; sourceTree = SDKROOT; };
+		D28735C71A8A82DE0071A420 /* FV2AuthPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FV2AuthPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		D28735CB1A8A82DE0071A420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D28735D11A8A83080071A420 /* Main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Main.m; sourceTree = "<group>"; };
+		D29783971A8AD90500A42A81 /* CreateLocalAdminUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateLocalAdminUser.h; path = "Open Directory/CreateLocalAdminUser.h"; sourceTree = "<group>"; };
+		D29783981A8AD90500A42A81 /* CreateLocalAdminUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateLocalAdminUser.m; path = "Open Directory/CreateLocalAdminUser.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D28735C41A8A82DE0071A420 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D28055381A8AD19B006880C9 /* libcsfde.dylib in Frameworks */,
+				D28055361A8AD195006880C9 /* libodfde.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D28055391A8AD1A4006880C9 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				D28055371A8AD19B006880C9 /* libcsfde.dylib */,
+				D28055351A8AD195006880C9 /* libodfde.dylib */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		D28735BE1A8A82DE0071A420 = {
+			isa = PBXGroup;
+			children = (
+				D28735D11A8A83080071A420 /* Main.m */,
+				D29783961A8AD8AF00A42A81 /* Open Directory */,
+				D28055391A8AD1A4006880C9 /* libs */,
+				D28735C91A8A82DE0071A420 /* FV2AuthPlugin */,
+				D28735C81A8A82DE0071A420 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D28735C81A8A82DE0071A420 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D28735C71A8A82DE0071A420 /* FV2AuthPlugin.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D28735C91A8A82DE0071A420 /* FV2AuthPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				D28735CA1A8A82DE0071A420 /* Supporting Files */,
+			);
+			path = FV2AuthPlugin;
+			sourceTree = "<group>";
+		};
+		D28735CA1A8A82DE0071A420 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D28735CB1A8A82DE0071A420 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D29783961A8AD8AF00A42A81 /* Open Directory */ = {
+			isa = PBXGroup;
+			children = (
+				D29783971A8AD90500A42A81 /* CreateLocalAdminUser.h */,
+				D29783981A8AD90500A42A81 /* CreateLocalAdminUser.m */,
+			);
+			name = "Open Directory";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D28735C61A8A82DE0071A420 /* FV2AuthPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D28735CE1A8A82DE0071A420 /* Build configuration list for PBXNativeTarget "FV2AuthPlugin" */;
+			buildPhases = (
+				D28735C31A8A82DE0071A420 /* Sources */,
+				D28735C41A8A82DE0071A420 /* Frameworks */,
+				D28735C51A8A82DE0071A420 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FV2AuthPlugin;
+			productName = FV2AuthPlugin;
+			productReference = D28735C71A8A82DE0071A420 /* FV2AuthPlugin.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D28735BF1A8A82DE0071A420 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = NIH;
+				TargetAttributes = {
+					D28735C61A8A82DE0071A420 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+				};
+			};
+			buildConfigurationList = D28735C21A8A82DE0071A420 /* Build configuration list for PBXProject "FV2AuthPlugin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D28735BE1A8A82DE0071A420;
+			productRefGroup = D28735C81A8A82DE0071A420 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D28735C61A8A82DE0071A420 /* FV2AuthPlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D28735C51A8A82DE0071A420 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D28735C31A8A82DE0071A420 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29783991A8AD90500A42A81 /* CreateLocalAdminUser.m in Sources */,
+				D28735D21A8A83080071A420 /* Main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D28735CC1A8A82DE0071A420 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: NATIONAL INSTITUTE OF MENTAL HEALTH (QZQALU4M8H)";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D28735CD1A8A82DE0071A420 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: NATIONAL INSTITUTE OF MENTAL HEALTH (QZQALU4M8H)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D28735CF1A8A82DE0071A420 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FV2AuthPlugin/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		D28735D01A8A82DE0071A420 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FV2AuthPlugin/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D28735C21A8A82DE0071A420 /* Build configuration list for PBXProject "FV2AuthPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D28735CC1A8A82DE0071A420 /* Debug */,
+				D28735CD1A8A82DE0071A420 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D28735CE1A8A82DE0071A420 /* Build configuration list for PBXNativeTarget "FV2AuthPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D28735CF1A8A82DE0071A420 /* Debug */,
+				D28735D01A8A82DE0071A420 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D28735BF1A8A82DE0071A420 /* Project object */;
+}
