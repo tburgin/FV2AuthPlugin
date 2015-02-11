@@ -2,10 +2,11 @@
 
 Here is an Authorization Plugin that is designed to automatically, seamlessly and silently add users to FileVault 2 while the user is authenticating at the Login Window.
 
-## system.login.console
+## How to install
+
+The plugin must live here: `/Library/Security/SecurityAgentPlugins/FV2AuthPlugin.bundle`
 
 The Authorization Plugin is called from the system.login.console in the authorization databse.
-The plugin must live here: `/Library/Security/SecurityAgentPlugins/FV2AuthPlugin.bundle`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
