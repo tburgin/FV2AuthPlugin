@@ -5,6 +5,7 @@ Here is an Authorization Plugin that is designed to automatically, seamlessly an
 ## system.login.console
 
 The Authorization Plugin is called from the system.login.console in the authorization databse.
+The plugin must live here: `/Library/Security/SecurityAgentPlugins/FV2AuthPlugin.bundle`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
