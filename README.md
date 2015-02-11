@@ -99,5 +99,5 @@ https://developer.apple.com/library/mac/samplecode/NullAuthPlugin/
 https://developer.apple.com/library/mac/documentation/Security/Reference/AuthorizationPluginRef/index.html
 https://github.com/google/macops/tree/master/macdestroyer
 
-
+Thanks to @jbaker10 for the initial proof of concept and devising test scenarios
 
