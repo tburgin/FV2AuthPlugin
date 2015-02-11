@@ -49,7 +49,12 @@ FV2AuthPlugin is called from the system.login.console in the authorization datab
 </plist>
 ```
 
-### Manual Install
+## Package Installer
+
+You can grab the Packages file here to build a pkg.
+
+
+## Manual Install
 
 1.  Build the FV2AuthPlugin.bundle with xcode from the source or download the latest binary from: https://github.com/tburgin/FV2AuthPlugin/releases
 
