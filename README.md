@@ -92,4 +92,12 @@ We now have everything we need to add a user to FileVault2. Keep in mind that OD
 
 This symbol still exists in 10.10.2 and works for our purposes.
 
+## Resources
+
+Alot of copy - paste from:
+https://developer.apple.com/library/mac/samplecode/NullAuthPlugin/
+https://developer.apple.com/library/mac/documentation/Security/Reference/AuthorizationPluginRef/index.html
+https://github.com/google/macops/tree/master/macdestroyer
+
+
 
