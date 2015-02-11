@@ -1,7 +1,5 @@
 # FV2AuthPlugin
 
-# FV2AuthPlugin
-
 Here is an Authorization Plugin that is designed to automatically, seamlessly and silently add users to FileVault 2 while authenticating at the Login Window.
 
 ## system.login.console
