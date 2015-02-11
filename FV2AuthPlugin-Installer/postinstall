@@ -1,0 +1,105 @@
+#!/usr/bin/env python2.6
+
+# Copyright 2014 Thomas Burgin.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import subprocess
+from subprocess import Popen, PIPE, STDOUT
+import plistlib
+import platform
+import os
+import sys
+
+mechs_to_add = ["FV2AuthPlugin:add-users,privileged"]
+
+if "check_output" not in dir(subprocess):
+    def f(*popenargs, **kwargs):
+        if 'stdout' in kwargs:
+            raise ValueError('stdout argument not allowed, it will be overridden.')
+        process = subprocess.Popen(stdout=subprocess.PIPE, *popenargs, **kwargs)
+        output, unused_err = process.communicate()
+        retcode = process.poll()
+        if retcode:
+            cmd = kwargs.get("args")
+            if cmd is None:
+                cmd = popenargs[0]
+            raise subprocess.CalledProcessError(retcode, cmd)
+        return output
+
+    subprocess.check_output = f
+
+
+def bash_command(script):
+    try:
+        return subprocess.check_output(script)
+    except (subprocess.CalledProcessError, OSError), err:
+        return "[* Error] **%s** [%s]" % (err, str(script))
+
+
+def edit_etc_auth():
+    ## Read in authdb
+    d = plistlib.readPlist('/etc/authorization')
+
+    ## Backup authdb
+    plistlib.writePlist(d, '/etc/authorization_backup.plist')
+
+    ## modify "system.login.console"
+    i = int(d['rights']['system.login.console']['mechanisms'].index("PKINITMechanism:auth,privileged")) + 1
+    for e in mechs_to_add:
+        if e not in d['rights']['system.login.console']['mechanisms']:
+            d['rights']['system.login.console']['mechanisms'].insert(i, e)
+        i += 1
+
+    plistlib.writePlist(d, '/etc/authorization')
+
+
+def edit_authdb():
+    ## Export "system.login.console"
+    system_login_console = bash_command(["/usr/bin/security", "authorizationdb", "read", "system.login.console"])
+    f_c = open('/private/var/tmp/system.login.console.plist', 'w')
+    f_c.write(system_login_console)
+    f_c.close()
+
+    ## Modify system.login.console
+    for p in ['/private/var/tmp/system.login.console.plist']:
+        d = plistlib.readPlist(p)
+        i = int(d['mechanisms'].index("PKINITMechanism:auth,privileged")) + 1
+        for e in mechs_to_add:
+            if e not in d['mechanisms']:
+                d['mechanisms'].insert(i, e)
+            i += 1
+            	
+        plistlib.writePlist(d, p)
+
+    f_c = open("/private/var/tmp/system.login.console.plist", "r")
+    p = Popen(["/usr/bin/security", "authorizationdb", "write", "system.login.console"], stdout=PIPE, stdin=PIPE, stderr=PIPE)
+    stdout_data = p.communicate(input=f_c.read())
+    f_c.close()
+
+
+## Run only as root ##
+if not os.geteuid() == 0:
+    sys.exit("\nOnly root can run this script\n")
+
+OSVersion, _, _ = platform.mac_ver()
+OSVersion = int(OSVersion.split('.')[1])
+
+
+if OSVersion == 7:
+    edit_etc_auth()
+if OSVersion == 8:
+    edit_etc_auth()
+if OSVersion >= 9:
+    edit_authdb()
+

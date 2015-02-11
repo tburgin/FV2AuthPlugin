@@ -242,6 +242,7 @@
 		D28735CF1A8A82DE0071A420 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application: NATIONAL INSTITUTE OF MENTAL HEALTH (QZQALU4M8H)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FV2AuthPlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
@@ -254,6 +255,7 @@
 		D28735D01A8A82DE0071A420 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application: NATIONAL INSTITUTE OF MENTAL HEALTH (QZQALU4M8H)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FV2AuthPlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
