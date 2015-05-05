@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D257FDEF1AF95F99008A75C8 /* OpenDirectory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D257FDEE1AF95F99008A75C8 /* OpenDirectory.framework */; };
 		D2772B261AF934D000B390A0 /* AuthorizationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D2772B251AF934D000B390A0 /* AuthorizationPlugin.m */; };
 		D28055361A8AD195006880C9 /* libodfde.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D28055351A8AD195006880C9 /* libodfde.dylib */; };
 		D28055381A8AD19B006880C9 /* libcsfde.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D28055371A8AD19B006880C9 /* libcsfde.dylib */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D257FDEE1AF95F99008A75C8 /* OpenDirectory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenDirectory.framework; path = System/Library/Frameworks/OpenDirectory.framework; sourceTree = SDKROOT; };
 		D2772B241AF934D000B390A0 /* AuthorizationPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorizationPlugin.h; sourceTree = "<group>"; };
 		D2772B251AF934D000B390A0 /* AuthorizationPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorizationPlugin.m; sourceTree = "<group>"; };
 		D28055351A8AD195006880C9 /* libodfde.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libodfde.dylib; path = usr/lib/libodfde.dylib; sourceTree = SDKROOT; };
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D257FDEF1AF95F99008A75C8 /* OpenDirectory.framework in Frameworks */,
 				D28055381A8AD19B006880C9 /* libcsfde.dylib in Frameworks */,
 				D28055361A8AD195006880C9 /* libodfde.dylib in Frameworks */,
 			);
@@ -40,6 +43,7 @@
 		D28055391A8AD1A4006880C9 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				D257FDEE1AF95F99008A75C8 /* OpenDirectory.framework */,
 				D28055371A8AD19B006880C9 /* libcsfde.dylib */,
 				D28055351A8AD195006880C9 /* libodfde.dylib */,
 			);
@@ -202,7 +206,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 			};
 			name = Debug;
 		};
@@ -237,7 +241,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 			};
 			name = Release;
 		};
