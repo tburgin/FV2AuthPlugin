@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2772B261AF934D000B390A0 /* AuthorizationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D2772B251AF934D000B390A0 /* AuthorizationPlugin.m */; };
 		D28055361A8AD195006880C9 /* libodfde.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D28055351A8AD195006880C9 /* libodfde.dylib */; };
 		D28055381A8AD19B006880C9 /* libcsfde.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D28055371A8AD19B006880C9 /* libcsfde.dylib */; };
-		D28735D21A8A83080071A420 /* Main.m in Sources */ = {isa = PBXBuildFile; fileRef = D28735D11A8A83080071A420 /* Main.m */; };
 		D29783991A8AD90500A42A81 /* CreateLocalAdminUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D29783981A8AD90500A42A81 /* CreateLocalAdminUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D2772B241AF934D000B390A0 /* AuthorizationPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorizationPlugin.h; sourceTree = "<group>"; };
+		D2772B251AF934D000B390A0 /* AuthorizationPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorizationPlugin.m; sourceTree = "<group>"; };
 		D28055351A8AD195006880C9 /* libodfde.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libodfde.dylib; path = usr/lib/libodfde.dylib; sourceTree = SDKROOT; };
 		D28055371A8AD19B006880C9 /* libcsfde.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcsfde.dylib; path = usr/lib/libcsfde.dylib; sourceTree = SDKROOT; };
 		D28735C71A8A82DE0071A420 /* FV2AuthPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FV2AuthPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28735CB1A8A82DE0071A420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D28735D11A8A83080071A420 /* Main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Main.m; sourceTree = "<group>"; };
 		D29783971A8AD90500A42A81 /* CreateLocalAdminUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateLocalAdminUser.h; path = "Open Directory/CreateLocalAdminUser.h"; sourceTree = "<group>"; };
 		D29783981A8AD90500A42A81 /* CreateLocalAdminUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateLocalAdminUser.m; path = "Open Directory/CreateLocalAdminUser.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,7 +49,8 @@
 		D28735BE1A8A82DE0071A420 = {
 			isa = PBXGroup;
 			children = (
-				D28735D11A8A83080071A420 /* Main.m */,
+				D2772B241AF934D000B390A0 /* AuthorizationPlugin.h */,
+				D2772B251AF934D000B390A0 /* AuthorizationPlugin.m */,
 				D29783961A8AD8AF00A42A81 /* Open Directory */,
 				D28055391A8AD1A4006880C9 /* libs */,
 				D28735C91A8A82DE0071A420 /* FV2AuthPlugin */,
@@ -156,7 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D29783991A8AD90500A42A81 /* CreateLocalAdminUser.m in Sources */,
-				D28735D21A8A83080071A420 /* Main.m in Sources */,
+				D2772B261AF934D000B390A0 /* AuthorizationPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

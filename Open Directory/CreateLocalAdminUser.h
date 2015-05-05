@@ -23,11 +23,29 @@
 
 @interface CreateLocalAdminUser : NSObject
 
+/**
+ *  Create a temp user admin account.
+ *
+ *  @param user_name     NSString
+ *  @param temp_password NSString
+ *
+ *  @return BOOL
+ */
 - (BOOL) createRecord:(NSString *)user_name tempPassword:(NSString*)temp_password;
+
+/**
+ *  Destroy the record created by createRecord
+ */
 - (void) destoryCreatedRecord;
 
+/**
+ *  Strong ODRecord
+ */
 @property (nonatomic, retain) ODRecord *group;
-@property (nonatomic, retain) ODRecord *myRecord;
 
+/**
+ *  Strong ODRecord
+ */
+@property (nonatomic, retain) ODRecord *myRecord;
 
 @end

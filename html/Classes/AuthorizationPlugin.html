@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>AuthorizationPlugin Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">FV2AuthPlugin </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">NIH</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/AuthorizationPluginCreate:PluginRef:PluginInterface:">+ AuthorizationPluginCreate:PluginRef:PluginInterface:</option>
+		
+		<option value="//api/name/MechanismCreate:EngineRef:MechanismId:MechanismRef:">+ MechanismCreate:EngineRef:MechanismId:MechanismRef:</option>
+		
+		<option value="//api/name/MechanismDeactivate:">+ MechanismDeactivate:</option>
+		
+		<option value="//api/name/MechanismDestroy:">+ MechanismDestroy:</option>
+		
+		<option value="//api/name/MechanismInvoke:">+ MechanismInvoke:</option>
+		
+		<option value="//api/name/MechanismValid:">+ MechanismValid:</option>
+		
+		<option value="//api/name/PluginDestroy:">+ PluginDestroy:</option>
+		
+		<option value="//api/name/PluginValid:">+ PluginValid:</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">AuthorizationPlugin Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>AuthorizationPlugin.h<br />AuthorizationPlugin.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/MechanismValid:" title="MechanismValid:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/MechanismValid:">+&nbsp;MechanismValid:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>MechanismRecord is the per-mechanism data structure.  One of these
+is created for each mechanism that&rsquo;s instantiated, and holds all
+of the data needed to run that mechanism.  In this trivial example,
+that data set is very small.
+Mechanisms are single threaded; the code does not have to guard
+against multiple threads running inside the mechanism simultaneously.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)MechanismValid:(const MechanismRecord *)<em>mechanism</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mechanism</code></th>
+						<td><p>MechanismRecord</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>BOOL Value. Is the mech valid</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AuthorizationPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/PluginValid:" title="PluginValid:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/PluginValid:">+&nbsp;PluginValid:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>PluginRecord is the per-plugin data structure.  As the system only
+instantiates a plugin once per plugin host, this information could
+just as easily be kept in global variables.  However, just to keep
+things tidy, I pushed it all into a single record.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)PluginValid:(const PluginRecord *)<em>plugin</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>plugin</code></th>
+						<td><p>PluginRecord</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>BOOL Value. Is the plugin valid</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>As a plugin may host multiple mechanism, and there&rsquo;s no guarantee
+that these mechanisms won&rsquo;t be running on different threads, data
+in this record should be protected from multiple concurrent access.
+In my case, however, all of the data is read-only, so I don&rsquo;t need
+to do anything special.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AuthorizationPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/MechanismCreate:EngineRef:MechanismId:MechanismRef:" title="MechanismCreate:EngineRef:MechanismId:MechanismRef:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/MechanismCreate:EngineRef:MechanismId:MechanismRef:">+&nbsp;MechanismCreate:EngineRef:MechanismId:MechanismRef:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called by the plugin host to create a mechanism, that is, a specific
+instance of authentication.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (OSStatus)MechanismCreate:(AuthorizationPluginRef)<em>inPlugin</em> EngineRef:(AuthorizationEngineRef)<em>inEngine</em> MechanismId:(AuthorizationMechanismId)<em>mechanismId</em> MechanismRef:(AuthorizationMechanismRef *)<em>outMechanism</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inPlugin</code></th>
+						<td><p>AuthorizationPluginRef</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inEngine</code></th>
+						<td><p>AuthorizationEngineRef</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mechanismId</code></th>
+						<td><p>AuthorizationMechanismId</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>outMechanism</code></th>
+						<td><p>AuthorizationMechanismRef</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>OSStatus</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>inPlugin is the plugin reference, that is, the value returned by
+AuthorizationPluginCreate.</p>
+
+<p>inEngine is a reference to the engine that&rsquo;s running the plugin.
+We need to keep it around because it&rsquo;s a parameter to all the
+callbacks.</p>
+
+<p>mechanismId is the name of the mechanism.  When you configure your
+mechanism in &ldquo;/etc/authorization&rdquo;, you supply a string of the
+form:</p>
+
+<p>plugin:mechanism[,privileged]</p>
+
+<p>where:</p>
+
+<p>o plugin is the name of this bundle (without the extension)
+o mechanism is the string that&rsquo;s passed to mechanismId
+o privileged, if present, causes this mechanism to be
+instantiated in the privileged (rather than the GUI-capable)
+plug-in host</p>
+
+<p>You can use the mechanismId to support multiple types of
+operation within the same plugin code.  For example, your plugin
+might have two cooperating mechanisms, one that needs to use the
+GUI and one that needs to run privileged.  This allows you to put
+both mechanisms in the same plugin.</p>
+
+<p>outMechanism is a pointer to a place where you return a reference to
+the newly created mechanism.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AuthorizationPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/MechanismInvoke:" title="MechanismInvoke:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/MechanismInvoke:">+&nbsp;MechanismInvoke:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called by the system to start authentication using this mechanism.
+This is where the real work is done.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (OSStatus)MechanismInvoke:(AuthorizationMechanismRef)<em>inMechanism</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inMechanism</code></th>
+						<td><p>AuthorizationMechanismRef</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>OSStatus</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AuthorizationPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/MechanismDeactivate:" title="MechanismDeactivate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/MechanismDeactivate:">+&nbsp;MechanismDeactivate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called by the system to deactivate the mechanism, in the traditional
+GUI sense of deactivating a window.  After your plugin has deactivated
+it&rsquo;s UI, it should call the DidDeactivate callback.
+In our case, we have no UI, so we just call DidDeactivate immediately.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (OSStatus)MechanismDeactivate:(AuthorizationMechanismRef)<em>inMechanism</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inMechanism</code></th>
+						<td><p>AuthorizationMechanismRef</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>OSStatus</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AuthorizationPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/MechanismDestroy:" title="MechanismDestroy:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/MechanismDestroy:">+&nbsp;MechanismDestroy:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called by the system when it&rsquo;s done with the mechanism.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (OSStatus)MechanismDestroy:(AuthorizationMechanismRef)<em>inMechanism</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inMechanism</code></th>
+						<td><p>AuthorizationMechanismRef</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>OSStatus</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AuthorizationPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/PluginDestroy:" title="PluginDestroy:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/PluginDestroy:">+&nbsp;PluginDestroy:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called by the system when it&rsquo;s done with the plugin.
+All of the mechanisms should have been destroyed by this time.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (OSStatus)PluginDestroy:(AuthorizationPluginRef)<em>inPlugin</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>inPlugin</code></th>
+						<td><p>AuthorizationMechanismRef</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>OSStatus</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AuthorizationPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/AuthorizationPluginCreate:PluginRef:PluginInterface:" title="AuthorizationPluginCreate:PluginRef:PluginInterface:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/AuthorizationPluginCreate:PluginRef:PluginInterface:">+&nbsp;AuthorizationPluginCreate:PluginRef:PluginInterface:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The primary entry point of the plugin.  Called by the system
+to instantiate the plugin.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (OSStatus)AuthorizationPluginCreate:(const AuthorizationCallbacks *)<em>callbacks</em> PluginRef:(AuthorizationPluginRef *)<em>outPlugin</em> PluginInterface:(const AuthorizationPluginInterface **)<em>outPluginInterface</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callbacks</code></th>
+						<td><p>AuthorizationCallbacks</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>outPlugin</code></th>
+						<td><p>AuthorizationPluginRef</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>outPluginInterface</code></th>
+						<td><p>AuthorizationPluginInterface</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>OSStatus</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>callbacks is a pointer to a bunch of callbacks that allow
+your plugin to ask the system to do operations on your behalf.</p>
+
+<p>outPlugin is a pointer to a place where you can return a
+reference to the newly created plugin.</p>
+
+<p>outPluginInterface is a pointer to a place where you can return
+a pointer to your plugin dispatch table.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AuthorizationPlugin.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 NIH. All rights reserved. Updated: 2015-05-05</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
