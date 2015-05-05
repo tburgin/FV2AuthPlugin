@@ -11,31 +11,23 @@
 #pragma mark
 #pragma mark Entry Points Wrappers
 
-static OSStatus PluginDestroy(AuthorizationPluginRef inPlugin)
-{
+static OSStatus PluginDestroy(AuthorizationPluginRef inPlugin) {
     return [AuthorizationPlugin PluginDestroy:inPlugin];
 }
 
-static OSStatus MechanismCreate(AuthorizationPluginRef inPlugin,
-                                            AuthorizationEngineRef inEngine,
-                                            AuthorizationMechanismId mechanismId,
-                                            AuthorizationMechanismRef *outMechanism)
-{
+static OSStatus MechanismCreate(AuthorizationPluginRef inPlugin, AuthorizationEngineRef inEngine, AuthorizationMechanismId mechanismId, AuthorizationMechanismRef *outMechanism) {
     return [AuthorizationPlugin MechanismCreate:inPlugin EngineRef:inEngine MechanismId:mechanismId MechanismRef:outMechanism];
 }
 
-static OSStatus MechanismInvoke(AuthorizationMechanismRef inMechanism)
-{
+static OSStatus MechanismInvoke(AuthorizationMechanismRef inMechanism) {
     return [AuthorizationPlugin MechanismInvoke:inMechanism];
 }
 
-static OSStatus MechanismDeactivate(AuthorizationMechanismRef inMechanism)
-{
+static OSStatus MechanismDeactivate(AuthorizationMechanismRef inMechanism) {
     return [AuthorizationPlugin MechanismDeactivate:inMechanism];
 }
 
-static OSStatus MechanismDestroy(AuthorizationMechanismRef inMechanism)
-{
+static OSStatus MechanismDestroy(AuthorizationMechanismRef inMechanism) {
     return [AuthorizationPlugin MechanismDestroy:inMechanism];
 }
 
@@ -48,10 +40,7 @@ static AuthorizationPluginInterface gPluginInterface = {
     &MechanismDestroy
 };
 
-extern OSStatus AuthorizationPluginCreate(const AuthorizationCallbacks *callbacks,
-                                          AuthorizationPluginRef *outPlugin,
-                                          const AuthorizationPluginInterface **outPluginInterface)
-{
+extern OSStatus AuthorizationPluginCreate(const AuthorizationCallbacks *callbacks, AuthorizationPluginRef *outPlugin, const AuthorizationPluginInterface **outPluginInterface) {
     return [AuthorizationPlugin AuthorizationPluginCreate:callbacks PluginRef:outPlugin PluginInterface:outPluginInterface];
 }
 
