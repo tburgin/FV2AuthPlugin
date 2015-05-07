@@ -54,27 +54,27 @@
 	
 
 	
-	<optgroup label="Class Methods">
+
+	
+	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/AuthorizationPluginCreate:PluginRef:PluginInterface:">+ AuthorizationPluginCreate:PluginRef:PluginInterface:</option>
+		<option value="//api/name/AuthorizationPluginCreate:PluginRef:PluginInterface:">- AuthorizationPluginCreate:PluginRef:PluginInterface:</option>
 		
-		<option value="//api/name/MechanismCreate:EngineRef:MechanismId:MechanismRef:">+ MechanismCreate:EngineRef:MechanismId:MechanismRef:</option>
+		<option value="//api/name/MechanismCreate:EngineRef:MechanismId:MechanismRef:">- MechanismCreate:EngineRef:MechanismId:MechanismRef:</option>
 		
-		<option value="//api/name/MechanismDeactivate:">+ MechanismDeactivate:</option>
+		<option value="//api/name/MechanismDeactivate:">- MechanismDeactivate:</option>
 		
-		<option value="//api/name/MechanismDestroy:">+ MechanismDestroy:</option>
+		<option value="//api/name/MechanismDestroy:">- MechanismDestroy:</option>
 		
-		<option value="//api/name/MechanismInvoke:">+ MechanismInvoke:</option>
+		<option value="//api/name/MechanismInvoke:">- MechanismInvoke:</option>
 		
-		<option value="//api/name/MechanismValid:">+ MechanismValid:</option>
+		<option value="//api/name/MechanismValid:">- MechanismValid:</option>
 		
-		<option value="//api/name/PluginDestroy:">+ PluginDestroy:</option>
+		<option value="//api/name/PluginDestroy:">- PluginDestroy:</option>
 		
-		<option value="//api/name/PluginValid:">+ PluginValid:</option>
+		<option value="//api/name/PluginValid:">- PluginValid:</option>
 		
 	</optgroup>
-	
-
 	
 	
 </select>
@@ -117,7 +117,7 @@
 						<div class="task-list">
 							<div class="section-method">
 	<a name="//api/name/MechanismValid:" title="MechanismValid:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/MechanismValid:">+&nbsp;MechanismValid:</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/MechanismValid:">&ndash;&nbsp;MechanismValid:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -137,7 +137,7 @@ against multiple threads running inside the mechanism simultaneously.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)MechanismValid:(const MechanismRecord *)<em>mechanism</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)MechanismValid:(const MechanismRecord *)<em>mechanism</em></code></div>
 
 		    
 			
@@ -180,7 +180,7 @@ against multiple threads running inside the mechanism simultaneously.</p>
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/PluginValid:" title="PluginValid:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/PluginValid:">+&nbsp;PluginValid:</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/PluginValid:">&ndash;&nbsp;PluginValid:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -198,7 +198,7 @@ things tidy, I pushed it all into a single record.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)PluginValid:(const PluginRecord *)<em>plugin</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)PluginValid:(const PluginRecord *)<em>plugin</em></code></div>
 
 		    
 			
@@ -250,7 +250,7 @@ to do anything special.</p>
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/MechanismCreate:EngineRef:MechanismId:MechanismRef:" title="MechanismCreate:EngineRef:MechanismId:MechanismRef:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/MechanismCreate:EngineRef:MechanismId:MechanismRef:">+&nbsp;MechanismCreate:EngineRef:MechanismId:MechanismRef:</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/MechanismCreate:EngineRef:MechanismId:MechanismRef:">&ndash;&nbsp;MechanismCreate:EngineRef:MechanismId:MechanismRef:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -266,7 +266,7 @@ instance of authentication.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (OSStatus)MechanismCreate:(AuthorizationPluginRef)<em>inPlugin</em> EngineRef:(AuthorizationEngineRef)<em>inEngine</em> MechanismId:(AuthorizationMechanismId)<em>mechanismId</em> MechanismRef:(AuthorizationMechanismRef *)<em>outMechanism</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (OSStatus)MechanismCreate:(AuthorizationPluginRef)<em>inPlugin</em> EngineRef:(AuthorizationEngineRef)<em>inEngine</em> MechanismId:(AuthorizationMechanismId)<em>mechanismId</em> MechanismRef:(AuthorizationMechanismRef *)<em>outMechanism</em></code></div>
 
 		    
 			
@@ -357,7 +357,7 @@ the newly created mechanism.</p>
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/MechanismInvoke:" title="MechanismInvoke:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/MechanismInvoke:">+&nbsp;MechanismInvoke:</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/MechanismInvoke:">&ndash;&nbsp;MechanismInvoke:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -373,7 +373,7 @@ This is where the real work is done.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (OSStatus)MechanismInvoke:(AuthorizationMechanismRef)<em>inMechanism</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (OSStatus)MechanismInvoke:(AuthorizationMechanismRef)<em>inMechanism</em></code></div>
 
 		    
 			
@@ -416,7 +416,7 @@ This is where the real work is done.</p>
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/MechanismDeactivate:" title="MechanismDeactivate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/MechanismDeactivate:">+&nbsp;MechanismDeactivate:</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/MechanismDeactivate:">&ndash;&nbsp;MechanismDeactivate:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -434,7 +434,7 @@ In our case, we have no UI, so we just call DidDeactivate immediately.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (OSStatus)MechanismDeactivate:(AuthorizationMechanismRef)<em>inMechanism</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (OSStatus)MechanismDeactivate:(AuthorizationMechanismRef)<em>inMechanism</em></code></div>
 
 		    
 			
@@ -477,7 +477,7 @@ In our case, we have no UI, so we just call DidDeactivate immediately.</p>
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/MechanismDestroy:" title="MechanismDestroy:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/MechanismDestroy:">+&nbsp;MechanismDestroy:</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/MechanismDestroy:">&ndash;&nbsp;MechanismDestroy:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -492,7 +492,7 @@ In our case, we have no UI, so we just call DidDeactivate immediately.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (OSStatus)MechanismDestroy:(AuthorizationMechanismRef)<em>inMechanism</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (OSStatus)MechanismDestroy:(AuthorizationMechanismRef)<em>inMechanism</em></code></div>
 
 		    
 			
@@ -535,7 +535,7 @@ In our case, we have no UI, so we just call DidDeactivate immediately.</p>
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/PluginDestroy:" title="PluginDestroy:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/PluginDestroy:">+&nbsp;PluginDestroy:</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/PluginDestroy:">&ndash;&nbsp;PluginDestroy:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -551,7 +551,7 @@ All of the mechanisms should have been destroyed by this time.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (OSStatus)PluginDestroy:(AuthorizationPluginRef)<em>inPlugin</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (OSStatus)PluginDestroy:(AuthorizationPluginRef)<em>inPlugin</em></code></div>
 
 		    
 			
@@ -594,7 +594,7 @@ All of the mechanisms should have been destroyed by this time.</p>
 	</div>
 </div><div class="section-method">
 	<a name="//api/name/AuthorizationPluginCreate:PluginRef:PluginInterface:" title="AuthorizationPluginCreate:PluginRef:PluginInterface:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/AuthorizationPluginCreate:PluginRef:PluginInterface:">+&nbsp;AuthorizationPluginCreate:PluginRef:PluginInterface:</a></code>
+	<h3 class="method-title"><code><a href="#//api/name/AuthorizationPluginCreate:PluginRef:PluginInterface:">&ndash;&nbsp;AuthorizationPluginCreate:PluginRef:PluginInterface:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -610,7 +610,7 @@ to instantiate the plugin.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (OSStatus)AuthorizationPluginCreate:(const AuthorizationCallbacks *)<em>callbacks</em> PluginRef:(AuthorizationPluginRef *)<em>outPlugin</em> PluginInterface:(const AuthorizationPluginInterface **)<em>outPluginInterface</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (OSStatus)AuthorizationPluginCreate:(const AuthorizationCallbacks *)<em>callbacks</em> PluginRef:(AuthorizationPluginRef *)<em>outPlugin</em> PluginInterface:(const AuthorizationPluginInterface **)<em>outPluginInterface</em></code></div>
 
 		    
 			
@@ -686,7 +686,7 @@ a pointer to your plugin dispatch table.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 NIH. All rights reserved. Updated: 2015-05-05</p>
+						<p class="copyright">Copyright &copy; 2015 NIH. All rights reserved. Updated: 2015-05-07</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
