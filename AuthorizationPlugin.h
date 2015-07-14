@@ -16,10 +16,6 @@
 
 #pragma mark ***** Define External FDE fuctions
 
-extern CFStringRef CSFDEStorePassphrase(const char* password);
-extern BOOL ODFDEAddUser(CFStringRef authuser, CFStringRef authpass, CFStringRef username, CFStringRef password);
-
-
 @interface AuthorizationPlugin : NSObject
 
 #pragma mark ***** Core Data Structures

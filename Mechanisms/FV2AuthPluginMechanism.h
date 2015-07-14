@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AuthorizationPlugin.h"
+#include <dlfcn.h>
 
 @interface FV2AuthPluginMechanism : NSObject
 /**

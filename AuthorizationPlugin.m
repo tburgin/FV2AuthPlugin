@@ -58,6 +58,7 @@ extern OSStatus AuthorizationPluginCreate(const AuthorizationCallbacks *callback
 @implementation AuthorizationPlugin
 
 - (OSStatus) MechanismInvoke:(AuthorizationMechanismRef)inMechanism {
+    
     OSStatus                    err;
     MechanismRecord *           mechanism;
     
