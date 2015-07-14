@@ -94,7 +94,7 @@ This symbol still exists in 10.10.4 and works for our purposes.
 
 ## What if Apple removes this symbol or library?
 
-Version 0.2.1+ of FVAuthPlugin use Runtime-Loaded Libraries. This allows your system to check to make sure the nesisary dylibs and symbols exist. If they do not, FV2AuthPlugin will gracefully exit and allow your login to continue without performing any changes.
+Version 0.2.1+ of FVAuthPlugin use Runtime-Loaded Libraries. This allows your system to check to make sure the necessary dylibs and symbols exist. If they do not, FV2AuthPlugin will gracefully exit and allow your login to continue without performing any changes.
 
 ## Resources
 
