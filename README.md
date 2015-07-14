@@ -99,9 +99,9 @@ Version 0.2.1+ of FVAuthPlugin use Runtime-Loaded Libraries. This allows your sy
 ## Resources
 
 Alot of copy - paste from:
-https://developer.apple.com/library/mac/samplecode/NullAuthPlugin/
-https://developer.apple.com/library/mac/documentation/Security/Reference/AuthorizationPluginRef/index.html
-https://github.com/google/macops/tree/master/macdestroyer
+*  https://developer.apple.com/library/mac/samplecode/NullAuthPlugin/
+*  https://developer.apple.com/library/mac/documentation/Security/Reference/AuthorizationPluginRef/index.html
+*  https://github.com/google/macops/tree/master/macdestroyer
 
 Thanks to @jbaker10 for the initial proof of concept and devising test scenarios
 
