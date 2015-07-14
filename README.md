@@ -60,17 +60,17 @@ https://github.com/tburgin/FV2AuthPlugin/releases
 1.  Build the FV2AuthPlugin.bundle with xcode from the source or download the latest binary from: https://github.com/tburgin/FV2AuthPlugin/releases. If you build your own, make sure to sign the bundle. The login window will reset every login if the bundle is not signed.
 
 2. Copy the plugin to the SecurityAgentPlugins folder
-```sh
+```zsh
 sudo cp -r ~/Downloads/FV2AuthPlugin.bundle /Library/Security/SecurityAgentPlugins/;
 ```
 
 3. Set Proper Ownership
-```sh
+```zsh
 sudo chown -R root:wheel /Library/Security/SecurityAgentPlugins/FV2AuthPlugin.bundle;
 ```
 
 4. Set Proper Permissions
-```sh
+```zsh
 sudo chmod -R 755 /Library/Security/SecurityAgentPlugins/FV2AuthPlugin.bundle;
 ```
 
