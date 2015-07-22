@@ -10,7 +10,6 @@
 		D247C39D1AFBC47F00DECC5E /* FV2AuthPluginMechanism.m in Sources */ = {isa = PBXBuildFile; fileRef = D247C39C1AFBC47F00DECC5E /* FV2AuthPluginMechanism.m */; };
 		D257FDEF1AF95F99008A75C8 /* OpenDirectory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D257FDEE1AF95F99008A75C8 /* OpenDirectory.framework */; };
 		D2772B261AF934D000B390A0 /* AuthorizationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D2772B251AF934D000B390A0 /* AuthorizationPlugin.m */; };
-		D29783991A8AD90500A42A81 /* CreateLocalAdminUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D29783981A8AD90500A42A81 /* CreateLocalAdminUser.m */; };
 		D2D5CE381B55AD4F00D5FBEC /* FV2AuthPlugin.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = D28735C71A8A82DE0071A420 /* FV2AuthPlugin.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -35,8 +34,6 @@
 		D2772B251AF934D000B390A0 /* AuthorizationPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthorizationPlugin.m; path = ../AuthorizationPlugin.m; sourceTree = "<group>"; };
 		D28735C71A8A82DE0071A420 /* FV2AuthPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FV2AuthPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28735CB1A8A82DE0071A420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D29783971A8AD90500A42A81 /* CreateLocalAdminUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateLocalAdminUser.h; path = "Open Directory/CreateLocalAdminUser.h"; sourceTree = "<group>"; };
-		D29783981A8AD90500A42A81 /* CreateLocalAdminUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateLocalAdminUser.m; path = "Open Directory/CreateLocalAdminUser.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +70,6 @@
 			children = (
 				D28735C91A8A82DE0071A420 /* FV2AuthPlugin */,
 				D247C3971AFBC32200DECC5E /* Mechanisms */,
-				D29783961A8AD8AF00A42A81 /* Open Directory */,
 				D28055391A8AD1A4006880C9 /* libs */,
 				D28735C81A8A82DE0071A420 /* Products */,
 			);
@@ -103,15 +99,6 @@
 				D28735CB1A8A82DE0071A420 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D29783961A8AD8AF00A42A81 /* Open Directory */ = {
-			isa = PBXGroup;
-			children = (
-				D29783971A8AD90500A42A81 /* CreateLocalAdminUser.h */,
-				D29783981A8AD90500A42A81 /* CreateLocalAdminUser.m */,
-			);
-			name = "Open Directory";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,7 +185,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D29783991A8AD90500A42A81 /* CreateLocalAdminUser.m in Sources */,
 				D247C39D1AFBC47F00DECC5E /* FV2AuthPluginMechanism.m in Sources */,
 				D2772B261AF934D000B390A0 /* AuthorizationPlugin.m in Sources */,
 			);

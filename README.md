@@ -51,7 +51,7 @@ FV2AuthPlugin is called from the system.login.console in the authorization datab
 
 ## Package Installer
 
-You can grab the installer here. This binary does have code signing. The installer is unsigned. An uninstaller is included.
+You can grab the installer here. This binary does have code signing. The installer is signed. An uninstaller is included.
 https://github.com/tburgin/FV2AuthPlugin/releases
 
 
@@ -78,42 +78,39 @@ sudo chmod -R 755 /Library/Security/SecurityAgentPlugins/FV2AuthPlugin.bundle;
 
 Authorization Plugins give us access to a gold mine of information during the login process. We are able to capture the login user's username and clear text password. The FV2AuthPlugin runs after the builtin:authenticate,privileged runs, so we know that password used is valid.
 
-Now that we have the user's credenials, all we need is an admin account to authorize FV2 addition. Since we run the FV2AuthPlugin in privileged mode we have the ability to create a temporary local admin user and set it's password. This admin account is destroyed right after the login user is added to FV2. This temporary admin account has no UID / GID and has no SHELL assigned.
+~~Now that we have the user's credenials, all we need is an admin account to authorize FV2 addition. Since we run the FV2AuthPlugin in privileged mode we have the ability to create a temporary local admin user and set it's password. This admin account is destroyed right after the login user is added to FV2. This temporary admin account has no UID / GID and has no SHELL assigned.~~
 
-Currently I have a hardcoded username and password. This should be one of the first issue fixes.
+Thanks to @russellhancox for alerting me to the fact that an admin account is not required. The authenticating user's credentials are sufficient.
 
 ```objective-c
-NSString *temp_admin_username = @"fv2authplugin";
+BOOL ret = ODFDEAddUser(username, password, username, password);
 ```
 
-```objective-c       
-NSString *temp_password = @"password123";
-```
-
-The /usr/lib/libodfde.dylib has an undocumented symbol ` ODFDEAddUser `. Thanks to @russellhancox for publishing the correct variables needed in the macdestoryer repo:
+The /usr/lib/libodfde.dylib has an undocumented symbol `ODFDEAddUser`. Thanks again to @russellhancox for publishing the correct variables needed in the macdestoryer repo:
 
 https://github.com/google/macops/tree/master/macdestroyer
 
-```objective0c
-extern BOOL ODFDEAddUser(CFStringRef authuser, CFStringRef authpass, CFStringRef username, CFStringRef password);
+```objective-c
+extern BOOL ODFDEAddUser(CFStringRef username, CFStringRef password, CFStringRef username, CFStringRef password);
 ```
 
 We now have everything we need to add a user to FileVault2. Keep in mind that ODFDEAddUser is undocumented and will most likely be changed in future release of OS X.
 
-This symbol still exists in 10.10.2 and works for our purposes.
+This symbol still exists in 10.10.4 and works for our purposes.
 
 ## Resources
 
 Alot of copy - paste from:
-https://developer.apple.com/library/mac/samplecode/NullAuthPlugin/
-https://developer.apple.com/library/mac/documentation/Security/Reference/AuthorizationPluginRef/index.html
-https://github.com/google/macops/tree/master/macdestroyer
+
+  *  https://developer.apple.com/library/mac/samplecode/NullAuthPlugin/
+  *  https://developer.apple.com/library/mac/documentation/Security/Reference/AuthorizationPluginRef/index.html
+  *  https://github.com/google/macops/tree/master/macdestroyer
 
 Thanks to @jbaker10 for the initial proof of concept and devising test scenarios
 
 ## License
 
-Copyright 2014 Thomas Burgin.
+Copyright 2015 Thomas Burgin.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

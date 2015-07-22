@@ -8,11 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #include <CoreServices/CoreServices.h>
-#include <DirectoryService/DirectoryService.h>
 #include <Security/AuthorizationPlugin.h>
 #include <Security/AuthSession.h>
 #include <Security/AuthorizationTags.h>
-#import "CreateLocalAdminUser.h"
 
 #pragma mark ***** Define External FDE fuctions
 

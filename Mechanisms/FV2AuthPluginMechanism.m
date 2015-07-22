@@ -16,7 +16,7 @@
     
     OSStatus err;
     const AuthorizationValue *value;
-    AuthorizationContextFlags   flags;
+    AuthorizationContextFlags flags;
     CFStringRef username;
     CFStringRef password;
     
@@ -78,33 +78,13 @@
         return err;
     }
     
-    // Define temp's username and password
-    NSString *temp_admin_username = [[NSUUID UUID] UUIDString];
-    NSString *temp_password = [[NSUUID UUID] UUIDString];
-    
-    // Create a temp admin account
-    CreateLocalAdminUser *createLocalAdminUser = [[CreateLocalAdminUser alloc] init];
-    BOOL ret = [createLocalAdminUser createRecord:temp_admin_username tempPassword:temp_password];
-    
-    if (ret == 0) {
-        NSLog(@"FV2AuthPlugin:[!] Failed to create authenticating admin account. Exiting");
-        err = mechanism->fPlugin->fCallbacks->SetResult(mechanism->fEngine, kAuthorizationResultAllow);
-        return err;
-    }
-    
-    CFStringRef user_auth = CFStringCreateWithCString(NULL, (const char *)[temp_admin_username UTF8String], kCFStringEncodingUTF8);
-    CFStringRef pass_auth = CSFDEStorePassphrase((const char *)[temp_password UTF8String]);
-    
     // Try and add the user
-    ret = ODFDEAddUser(user_auth, pass_auth, username, password);
+    BOOL ret = ODFDEAddUser(username, password, username, password);
     if (ret) {
-        NSLog(@"FV2AuthPlugin:User:[+] Success [%@] added to FV2", (__bridge NSString*)username);
+        NSLog(@"FV2AuthPlugin:[+] Success [%@] added to FV2", (__bridge NSString*)username);
     } else {
-        NSLog(@"FV2AuthPlugin:User:[!] FAIL. User [%@] NOT added to FV2", (__bridge NSString*)username);
+        NSLog(@"FV2AuthPlugin:[!] FAIL. User [%@] NOT added to FV2", (__bridge NSString*)username);
     }
-    
-    // Delete the temp admin user
-    [createLocalAdminUser destoryCreatedRecord];
     
     NSLog(@"FV2AuthPlugin:[+] Done. Thanks and have a lovely day.");
     err = mechanism->fPlugin->fCallbacks->SetResult(mechanism->fEngine, kAuthorizationResultAllow);
