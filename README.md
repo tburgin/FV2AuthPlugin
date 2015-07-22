@@ -86,9 +86,9 @@ Thanks to @russellhancox for alerting me to the fact that an admin account is no
 BOOL ret = ODFDEAddUser(username, password, username, password);
 ```
 
-The /usr/lib/libodfde.dylib has an undocumented symbol `ODFDEAddUser`. Thanks again to @russellhancox for publishing the correct variables needed in the macdestoryer repo:
+The `/usr/lib/libodfde.dylib` has an undocumented symbol `ODFDEAddUser`. Thanks again to @russellhancox for publishing the correct variables needed in the macdestoryer repo:
 
-https://github.com/google/macops/tree/master/macdestroyer
+  *  https://github.com/google/macops/tree/master/macdestroyer
 
 ```objective-c
 extern BOOL ODFDEAddUser(CFStringRef username, CFStringRef password, CFStringRef username, CFStringRef password);
