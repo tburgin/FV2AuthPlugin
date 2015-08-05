@@ -38,7 +38,7 @@ def edit_etc_auth():
     plistlib.writePlist(d, '/etc/authorization_backup.plist')
 
     ## modify "system.login.console"
-    i = int(d['rights']['system.login.console']['mechanisms'].index("builtin:authenticate,privileged")) + 1
+    i = int(d['rights']['system.login.console']['mechanisms'].index("loginwindow:done"))
     for e in mechs_to_add:
         if e not in d['rights']['system.login.console']['mechanisms']:
             d['rights']['system.login.console']['mechanisms'].insert(i, e)
@@ -57,7 +57,7 @@ def edit_authdb():
     ## Modify system.login.console
     for p in ['/private/var/tmp/system.login.console.plist']:
         d = plistlib.readPlist(p)
-        i = int(d['mechanisms'].index("builtin:authenticate,privileged")) + 1
+        i = int(d['mechanisms'].index("loginwindow:done"))
         for e in mechs_to_add:
             if e not in d['mechanisms']:
                 d['mechanisms'].insert(i, e)
