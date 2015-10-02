@@ -10,86 +10,110 @@
 
 @implementation FV2AuthPluginMechanism
 
-+ (OSStatus) runMechanism:(MechanismRecord*)mechanism {
+- (id)initWithMechanism:(MechanismRecord *)inMechanism {
+    NSLog(@"NIHAuth:MechanismInvoke: inMechanism=%p", inMechanism);
+    _mechanism = (MechanismRecord *) inMechanism;
+    assert([MechanismHelper MechanismValid:_mechanism]);
+    return self;
+}
+
+- (OSStatus) runMechanism {
     
     NSLog(@"FV2AuthPlugin:MechanismInvoke:AddUsers *************************************");
     
-    OSStatus err;
-    const AuthorizationValue *value;
-    AuthorizationContextFlags flags;
-    CFStringRef username;
-    CFStringRef password;
-    
     // Open libcsfde.dylib.
-    void *libcsfde_handle = dlopen("libcsfde.dylib", RTLD_LOCAL | RTLD_LAZY);
-    if (!libcsfde_handle) {
+    _libcsfde_handle = dlopen("libcsfde.dylib", RTLD_LOCAL | RTLD_LAZY);
+    if (!_libcsfde_handle) {
         NSLog(@"FV2AuthPlugin:[!] [%s] Unable to load library: %s\n", __FILE__, dlerror());
-        err = mechanism->fPlugin->fCallbacks->SetResult(mechanism->fEngine, kAuthorizationResultAllow);
-        return err;
+        return [self allowLogin];
     }
     
     // Open libodfde.dylib.
-    void *libodfde_handle = dlopen("libodfde.dylib", RTLD_LOCAL | RTLD_LAZY);
-    if (!libodfde_handle) {
+    _libodfde_handle = dlopen("libodfde.dylib", RTLD_LOCAL | RTLD_LAZY);
+    if (!_libodfde_handle) {
         NSLog(@"FV2AuthPlugin:[!] [%s] Unable to load library: %s\n", __FILE__, dlerror());
-        err = mechanism->fPlugin->fCallbacks->SetResult(mechanism->fEngine, kAuthorizationResultAllow);
-        return err;
+        return [self allowLogin];
     }
+    
+    _username = [MechanismHelper getUserName:_mechanism];
+    _password = [MechanismHelper getPassword:_mechanism];
+    
+    if (!_username || !_password) {
+        return [self allowLogin];
+    }
+    
+    CFStringRef passwordRef = [self CSFDEStorePassphrase:_password];
+    
+    [self ODFDEAddUser:(__bridge CFStringRef)_username
+          withPassword:passwordRef];
+    
+    if (passwordRef) {
+        [self CSFDERemovePassphrase:passwordRef];
+    }
+    
+    return [self allowLogin];
+}
+
+- (CFStringRef) CSFDEStorePassphrase:(NSString *)password {
+    
+    CFStringRef passwordRef = NULL;
     
     // Grab the CSFDEStorePassphrase symbol
-    CFStringRef (*CSFDEStorePassphrase)(const char *password) = dlsym(libcsfde_handle, "CSFDEStorePassphrase");
+    CFStringRef (*CSFDEStorePassphrase)(const char *) = dlsym(_libcsfde_handle, "CSFDEStorePassphrase");
+    
     if (!CSFDEStorePassphrase) {
         NSLog(@"FV2AuthPlugin:[!] [%s] Unable to get symbol: %s\n", __FILE__, dlerror());
-        err = mechanism->fPlugin->fCallbacks->SetResult(mechanism->fEngine, kAuthorizationResultAllow);
-        return err;
+        [self allowLogin];
+        return passwordRef;
     }
+    
+    passwordRef = CSFDEStorePassphrase((const char *)[password UTF8String]);
+    
+    return passwordRef;
+}
+
+- (void) CSFDERemovePassphrase:(CFStringRef)passwordRef {
+    
+    // Grab the CSFDEStorePassphrase symbol
+    void (*CSFDERemovePassphrase)(CFStringRef) = dlsym(_libcsfde_handle, "CSFDERemovePassphrase");
+    
+    if (!CSFDERemovePassphrase) {
+        NSLog(@"FV2AuthPlugin:[!] [%s] Unable to get symbol: %s\n", __FILE__, dlerror());
+        [self allowLogin];
+    }
+    
+    CSFDERemovePassphrase(passwordRef);
+}
+
+- (BOOL) ODFDEAddUser:(CFStringRef)usernameRef withPassword:(CFStringRef)passwordRef {
     
     // Grab the ODFDEAddUser symbol
-    BOOL (*ODFDEAddUser)(CFStringRef authuser, CFStringRef authpass, CFStringRef username, CFStringRef password) = dlsym(libodfde_handle, "ODFDEAddUser");
+    BOOL (*ODFDEAddUser)(CFStringRef, CFStringRef, CFStringRef, CFStringRef) = dlsym(_libodfde_handle, "ODFDEAddUser");
     if (!ODFDEAddUser) {
         NSLog(@"FV2AuthPlugin:[!] [%s] Unable to get symbol: %s\n", __FILE__, dlerror());
-        err = mechanism->fPlugin->fCallbacks->SetResult(mechanism->fEngine, kAuthorizationResultAllow);
-        return err;
-    }
-    
-    // Get the AuthorizationEnvironmentUsername
-    err = noErr;
-    NSLog(@"FV2AuthPlugin:[+] Attempting to receive kAuthorizationEnvironmentUsername");
-    err = mechanism->fPlugin->fCallbacks->GetContextValue(mechanism->fEngine, kAuthorizationEnvironmentUsername, &flags, &value);
-    if (err == noErr && (value->length > 0) && (((const char *) value->data)[value->length - 1] == 0)) {
-        username = CFStringCreateWithCString(NULL, (const char *) value->data, kCFStringEncodingUTF8);
-        NSLog(@"FV2AuthPlugin:[+] kAuthorizationEnvironmentUsername [%@] was used.", username);
-    } else {
-        NSLog(@"FV2AuthPlugin:[!] kAuthorizationEnvironmentUsername was unreadable.");
-        err = mechanism->fPlugin->fCallbacks->SetResult(mechanism->fEngine, kAuthorizationResultAllow);
-        return err;
-    }
-    
-    // Get the kAuthorizationEnvironmentPassword
-    err = noErr;
-    NSLog(@"FV2AuthPlugin:[+] Attempting to receive kAuthorizationEnvironmentPassword");
-    err = mechanism->fPlugin->fCallbacks->GetContextValue(mechanism->fEngine, kAuthorizationEnvironmentPassword, &flags, &value);
-    if (err == noErr && (value->length > 0) && (((const char *) value->data)[value->length - 1] == 0)) {
-        password = CSFDEStorePassphrase((const char *) value->data);
-        NSLog(@"FV2AuthPlugin:[+] kAuthorizationEnvironmentPassword received");
-    } else {
-        NSLog(@"FV2AuthPlugin:[!] kAuthorizationEnvironmentPassword was unreadable.");
-        err = mechanism->fPlugin->fCallbacks->SetResult(mechanism->fEngine, kAuthorizationResultAllow);
-        return err;
+        [self allowLogin];
     }
     
     // Try and add the user
-    BOOL ret = ODFDEAddUser(username, password, username, password);
+    BOOL ret = ODFDEAddUser(usernameRef, passwordRef, usernameRef, passwordRef);
+    
     if (ret) {
-        NSLog(@"FV2AuthPlugin:[+] Success [%@] added to FV2", (__bridge NSString*)username);
+        NSLog(@"FV2AuthPlugin:[+] Success [%@] added to FV2", (__bridge NSString*)usernameRef);
     } else {
-        NSLog(@"FV2AuthPlugin:[!] FAIL. User [%@] NOT added to FV2", (__bridge NSString*)username);
+        NSLog(@"FV2AuthPlugin:[!] FAIL. User [%@] NOT added to FV2", (__bridge NSString*)usernameRef);
     }
     
-    NSLog(@"FV2AuthPlugin:[+] Done. Thanks and have a lovely day.");
-    err = mechanism->fPlugin->fCallbacks->SetResult(mechanism->fEngine, kAuthorizationResultAllow);
-    return err;
+    return ret;
+}
 
+- (OSStatus)allowLogin {
+    NSLog(@"FV2AuthPlugin:[+] Done. Thanks and have a lovely day.");
+    OSStatus err = _mechanism->fPlugin->fCallbacks->SetResult(_mechanism->fEngine, kAuthorizationResultAllow);
+    return err;
+}
+
+- (BOOL) addUserToFV:(NSString*)user withPassword:(NSString*)pass {
+    return true;
 }
 
 @end

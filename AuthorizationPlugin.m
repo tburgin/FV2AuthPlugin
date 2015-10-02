@@ -70,7 +70,9 @@ extern OSStatus AuthorizationPluginCreate(const AuthorizationCallbacks *callback
 #pragma mark AddUsers Mech
     
     if (mechanism->fAddUsers) {
-        [FV2AuthPluginMechanism runMechanism:mechanism];
+        FV2AuthPluginMechanism *fV2AuthPluginMechanism = [[FV2AuthPluginMechanism alloc]
+                                                          initWithMechanism:mechanism];
+        [fV2AuthPluginMechanism runMechanism];
     }
     
     err = mechanism->fPlugin->fCallbacks->SetResult(mechanism->fEngine, kAuthorizationResultAllow);
