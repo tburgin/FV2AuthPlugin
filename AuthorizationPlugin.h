@@ -12,9 +12,35 @@
 #include <Security/AuthSession.h>
 #include <Security/AuthorizationTags.h>
 
-#pragma mark ***** Define External FDE fuctions
-
 @interface AuthorizationPlugin : NSObject
+
+#pragma mark ***** Define Custom Types
+
+/**
+ *  Account Type
+ */
+typedef enum account_t {
+    /**
+     *  Local User
+     */
+    kLocal,
+    /**
+     *  Mobile User
+     */
+    kMobile,
+    /**
+     *  Network User
+     */
+    kNetwork,
+    /**
+     *  Mobile or Network
+     */
+    kMobile_or_Network,
+    /**
+     *  Unknown
+     */
+    kUnknownAccountType,
+} account_t;
 
 #pragma mark ***** Core Data Structures
 
