@@ -2,7 +2,8 @@
  
     NIHAuthPlugin
     Copyright © NIH. All rights reserved.
-    Republication or redistribution of NIH content is prohibited without the prior written consent of NIH.
+    Republication or redistribution of NIH content is prohibited without the 
+    prior written consent of NIH.
     Created by Burgin, Thomas (NIH/NIMH) [C]
 
 */

@@ -220,6 +220,7 @@ struct PluginRecord {
  */
 - (OSStatus) AuthorizationPluginCreate:(const AuthorizationCallbacks *)callbacks
                              PluginRef:(AuthorizationPluginRef *)outPlugin
-                       PluginInterface:(const AuthorizationPluginInterface **)outPluginInterface;
+                       PluginInterface:(const AuthorizationPluginInterface **)
+outPluginInterface;
 
 @end
