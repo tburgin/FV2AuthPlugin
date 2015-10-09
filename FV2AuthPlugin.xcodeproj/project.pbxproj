@@ -10,6 +10,7 @@
 		D247C39D1AFBC47F00DECC5E /* FV2AuthPluginMechanism.m in Sources */ = {isa = PBXBuildFile; fileRef = D247C39C1AFBC47F00DECC5E /* FV2AuthPluginMechanism.m */; };
 		D257FDEF1AF95F99008A75C8 /* OpenDirectory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D257FDEE1AF95F99008A75C8 /* OpenDirectory.framework */; };
 		D2772B261AF934D000B390A0 /* AuthorizationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D2772B251AF934D000B390A0 /* AuthorizationPlugin.m */; };
+		D283BF0E1BC84D450015CF4A /* MechanismHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D283BF0D1BC84D450015CF4A /* MechanismHelper.m */; };
 		D2D5CE381B55AD4F00D5FBEC /* FV2AuthPlugin.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = D28735C71A8A82DE0071A420 /* FV2AuthPlugin.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,8 @@
 		D257FDEE1AF95F99008A75C8 /* OpenDirectory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenDirectory.framework; path = System/Library/Frameworks/OpenDirectory.framework; sourceTree = SDKROOT; };
 		D2772B241AF934D000B390A0 /* AuthorizationPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthorizationPlugin.h; path = ../AuthorizationPlugin.h; sourceTree = "<group>"; };
 		D2772B251AF934D000B390A0 /* AuthorizationPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthorizationPlugin.m; path = ../AuthorizationPlugin.m; sourceTree = "<group>"; };
+		D283BF0C1BC84D450015CF4A /* MechanismHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MechanismHelper.h; sourceTree = "<group>"; };
+		D283BF0D1BC84D450015CF4A /* MechanismHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MechanismHelper.m; sourceTree = "<group>"; };
 		D28735C71A8A82DE0071A420 /* FV2AuthPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FV2AuthPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28735CB1A8A82DE0071A420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,6 +54,8 @@
 		D247C3971AFBC32200DECC5E /* Mechanisms */ = {
 			isa = PBXGroup;
 			children = (
+				D283BF0C1BC84D450015CF4A /* MechanismHelper.h */,
+				D283BF0D1BC84D450015CF4A /* MechanismHelper.m */,
 				D247C39B1AFBC47F00DECC5E /* FV2AuthPluginMechanism.h */,
 				D247C39C1AFBC47F00DECC5E /* FV2AuthPluginMechanism.m */,
 			);
@@ -187,6 +192,7 @@
 			files = (
 				D247C39D1AFBC47F00DECC5E /* FV2AuthPluginMechanism.m in Sources */,
 				D2772B261AF934D000B390A0 /* AuthorizationPlugin.m in Sources */,
+				D283BF0E1BC84D450015CF4A /* MechanismHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

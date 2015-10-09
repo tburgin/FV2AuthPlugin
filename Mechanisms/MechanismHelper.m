@@ -1,6 +1,6 @@
 /*
  
-    NIHAuthPlugin
+    FV2AuthPluginPlugin
     Copyright © NIH. All rights reserved.
     Republication or redistribution of NIH content is prohibited without the
     prior written consent of NIH.
@@ -21,7 +21,7 @@
 
 + (account_t)getAccountType:(AuthorizationMechanismRef)inMechanism {
     
-    NSLog(@"NIHAuth:MechanismInvoke:getAccountType [+] Attempting to check the \
+    NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [+] Attempting to check the \
           Account Type");
     
     MechanismRecord *mechanism;
@@ -41,7 +41,7 @@
     
     // Get kDSNAttrAuthenticationAuthority for the Authenticating User
     err = noErr;
-    NSLog(@"NIHAuth:MechanismInvoke:getAccountType [+] Attempting to receive \
+    NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [+] Attempting to receive \
           kDSNAttrAuthenticationAuthority.");
     
     err = mechanism->
@@ -52,11 +52,11 @@
                     &flags, &value);
     
     if (err == noErr) {
-        NSLog(@"NIHAuth:MechanismInvoke:getAccountType [+] \
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [+] \
               kDSNAttrAuthenticationAuthority received.     \
               Attempting plist to dict.");
     } else {
-        NSLog(@"NIHAuth:MechanismInvoke:getAccountType [!] \
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [!] \
               kDSNAttrAuthenticationAuthority was unreadable.");
         return accountType;
     }
@@ -76,20 +76,20 @@
             for (NSString * e in authData) {
                 if ([e rangeOfString:@";LocalCachedUser;"].location !=
                     NSNotFound) {
-                    NSLog(@"NIHAuth:MechanismInvoke:getAccountType [+] Account \
+                    NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [+] Account \
                           Type is kMobile");
                     accountType = kMobile;
                     break;
                 }
                 else if ([e rangeOfString:@";NetLogon;"].location != \
                          NSNotFound) {
-                    NSLog(@"NIHAuth:MechanismInvoke:getAccountType [+] Account \
+                    NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [+] Account \
                           Type is kNetwork");
                     accountType = kNetwork;
                     break;
                 }
                 else if ([e rangeOfString:@"@LKDC"].location != NSNotFound) {
-                    NSLog(@"NIHAuth:MechanismInvoke:getAccountType [+] Account \
+                    NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [+] Account \
                           Type is kLocal");
                     accountType = kLocal;
                     break;
@@ -116,7 +116,7 @@
     
     // Get the AuthorizationEnvironmentUsername
     err = noErr;
-    NSLog(@"NIHAuth:MechanismInvoke:getUserName [+] Attempting to receive \
+    NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [+] Attempting to receive \
           kAuthorizationEnvironmentUsername");
     
     err = mechanism->
@@ -132,10 +132,10 @@
                                           encoding:NSUTF8StringEncoding];
         userName = [userName stringByReplacingOccurrencesOfString:@"\0"
                                                        withString:@""];
-        NSLog(@"NIHAuth:MechanismInvoke:getUserName [+] \
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [+] \
               kAuthorizationEnvironmentUsername [%@] was used.", userName);
     } else {
-        NSLog(@"NIHAuth:MechanismInvoke:getUserName [!] \
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [!] \
               kAuthorizationEnvironmentUsername was unreadable.");
     }
     
@@ -154,7 +154,7 @@
     
     // Get the kAuthorizationEnvironmentPassword
     err = noErr;
-    NSLog(@"NIHAuth:MechanismInvoke:getUserName [+] Attempting to receive \
+    NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [+] Attempting to receive \
           kAuthorizationEnvironmentUsername");
     
     err = mechanism->
@@ -170,10 +170,10 @@
                                           encoding:NSUTF8StringEncoding];
         password = [password stringByReplacingOccurrencesOfString:@"\0"
                                                        withString:@""];
-        NSLog(@"NIHAuth:MechanismInvoke:getUserName [+] \
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [+] \
               kAuthorizationEnvironmentPassword received.");
     } else {
-        NSLog(@"NIHAuth:MechanismInvoke:getUserName [!] \
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [!] \
               kAuthorizationEnvironmentPassword was unreadable.");
     }
     
@@ -190,7 +190,7 @@
     NSString                    *tokenName = NULL;
     
     err = noErr;
-    NSLog(@"NIHAuth:MechanismInvoke:getUserName [+] Attempting to receive the \
+    NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [+] Attempting to receive the \
           authenticating SmartCard Keychain");
     
     err = mechanism->
@@ -204,10 +204,10 @@
                                            encoding:NSUTF8StringEncoding];
         tokenName = [tokenName stringByReplacingOccurrencesOfString:@"\0"
                                                          withString:@""];
-        NSLog(@"NIHAuth:MechanismInvoke:getTokenName: [+] Success. SmartCard \
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getTokenName: [+] Success. SmartCard \
               Keychain [%@] was used.", tokenName);
     } else {
-        NSLog(@"NIHAuth:MechanismInvoke:getTokenName: [!] token-name was \
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getTokenName: [!] token-name was \
               unreadable");
     }
     
@@ -230,11 +230,11 @@
                                                           &flags, &value);
     if ( (err == noErr) && (value->length == sizeof(uid_t))) {
         uid = *(const uid_t *) value->data;
-        NSLog(@"NIHAuth:MechanismInvoke:getUID [+] uid: [%u] Retrieved", uid);
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getUID [+] uid: [%u] Retrieved", uid);
     } else {
-        NSLog(@"NIHAuth:MechanismInvoke:getUID [!] Error Retrieving the \
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getUID [!] Error Retrieving the \
               authenticating uid");
-        NSLog(@"NIHAuth:MechanismInvoke:getUID [!] Error: [%d]", (int)err);
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getUID [!] Error: [%d]", (int)err);
     }
     
     return uid;
@@ -256,11 +256,11 @@
                                                           &flags, &value);
     if ( (err == noErr) && (value->length == sizeof(gid_t))) {
         gid = *(const uid_t *) value->data;
-        NSLog(@"NIHAuth:MechanismInvoke:getGID [+] gid: [%u] Retrieved", gid);
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getGID [+] gid: [%u] Retrieved", gid);
     } else {
-        NSLog(@"NIHAuth:MechanismInvoke:getGID [!] Error Retrieving the \
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getGID [!] Error Retrieving the \
               authenticating gid");
-        NSLog(@"NIHAuth:MechanismInvoke:getGID [!] Error: [%d]", (int)err);
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getGID [!] Error: [%d]", (int)err);
     }
     
     return gid;

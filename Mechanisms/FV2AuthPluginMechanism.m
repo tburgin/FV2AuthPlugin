@@ -11,7 +11,7 @@
 @implementation FV2AuthPluginMechanism
 
 - (id)initWithMechanism:(MechanismRecord *)inMechanism {
-    NSLog(@"NIHAuth:MechanismInvoke: inMechanism=%p", inMechanism);
+    NSLog(@"FV2AuthPlugin:MechanismInvoke: inMechanism=%p", inMechanism);
     _mechanism = (MechanismRecord *) inMechanism;
     assert([MechanismHelper MechanismValid:_mechanism]);
     return self;
