@@ -7,15 +7,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>add-users</string>
+	<string>fde-service</string>
 	<key>CFBundleExecutable</key>
-	<string>add-users</string>
+	<string>fde-service</string>
 	<key>CFBundleIdentifier</key>
-	<string>gov.nih.FV2AuthPlugin.add-users</string>
+	<string>gov.nih.fde-service</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>add-users</string>
+	<string>fde-service</string>
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
@@ -31,9 +31,9 @@
 	<key>DTPlatformVersion</key>
 	<string>GM</string>
 	<key>DTSDKBuild</key>
-	<string>14D125</string>
+	<string>12F37</string>
 	<key>DTSDKName</key>
-	<string>macosx10.10</string>
+	<string>macosx10.8</string>
 	<key>DTXcode</key>
 	<string>0640</string>
 	<key>DTXcodeBuild</key>

@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 NIH. All rights reserved.
 //
 
-#import "AuthorizationPlugin.h"
+#import "FV2AuthorizationPlugin.h"
 #import "FV2AuthPluginMechanism.h"
 
 #pragma mark
 #pragma mark Entry Points Wrappers
 
-AuthorizationPlugin *authorizationPlugin = nil;
+FV2AuthorizationPlugin *authorizationPlugin = nil;
 
 static OSStatus PluginDestroy(AuthorizationPluginRef inPlugin) {
     return [authorizationPlugin PluginDestroy:inPlugin];
@@ -56,7 +56,7 @@ extern OSStatus AuthorizationPluginCreate(const AuthorizationCallbacks
                                           **outPluginInterface) {
     
     if (authorizationPlugin == nil) {
-        authorizationPlugin = [[AuthorizationPlugin alloc] init];
+        authorizationPlugin = [[FV2AuthorizationPlugin alloc] init];
     }
     
     return [authorizationPlugin AuthorizationPluginCreate:callbacks
@@ -67,9 +67,9 @@ extern OSStatus AuthorizationPluginCreate(const AuthorizationCallbacks
 #pragma mark
 #pragma mark AuthorizationPlugin Implementation
 
-@implementation AuthorizationPlugin
+@implementation FV2AuthorizationPlugin
 
-- (OSStatus) MechanismInvoke:(AuthorizationMechanismRef)inMechanism {
+- (OSStatus)MechanismInvoke:(AuthorizationMechanismRef)inMechanism {
     
     OSStatus                    err;
     MechanismRecord *           mechanism;
@@ -98,21 +98,21 @@ extern OSStatus AuthorizationPluginCreate(const AuthorizationCallbacks
 #pragma mark Authorization Plugin Methods. No need to edit below.
 
 
-- (BOOL) MechanismValid:(const MechanismRecord *)mechanism {
+- (BOOL)MechanismValid:(const MechanismRecord *)mechanism {
     return (mechanism != NULL)
     && (mechanism->fMagic == kMechanismMagic)
     && (mechanism->fEngine != NULL)
     && (mechanism->fPlugin != NULL);
 }
 
-- (BOOL) PluginValid:(const PluginRecord *)plugin {
+- (BOOL)PluginValid:(const PluginRecord *)plugin {
     return (plugin != NULL)
     && (plugin->fMagic == kPluginMagic)
     && (plugin->fCallbacks != NULL)
     && (plugin->fCallbacks->version >= kAuthorizationCallbacksVersion);
 }
 
-- (OSStatus) MechanismCreate:(AuthorizationPluginRef)inPlugin
+- (OSStatus)MechanismCreate:(AuthorizationPluginRef)inPlugin
                    EngineRef:(AuthorizationEngineRef)inEngine
                  MechanismId:(AuthorizationMechanismId)mechanismId
                 MechanismRef:(AuthorizationMechanismRef *)outMechanism {
@@ -148,7 +148,7 @@ extern OSStatus AuthorizationPluginCreate(const AuthorizationCallbacks
 
 }
 
-- (OSStatus) MechanismDeactivate:(AuthorizationMechanismRef)inMechanism {
+- (OSStatus)MechanismDeactivate:(AuthorizationMechanismRef)inMechanism {
     OSStatus            err;
     MechanismRecord *   mechanism;
     
@@ -160,7 +160,7 @@ extern OSStatus AuthorizationPluginCreate(const AuthorizationCallbacks
     return err;
 }
 
-- (OSStatus) MechanismDestroy:(AuthorizationMechanismRef)inMechanism {
+- (OSStatus)MechanismDestroy:(AuthorizationMechanismRef)inMechanism {
     MechanismRecord *   mechanism;
     
     mechanism = (MechanismRecord *) inMechanism;
@@ -172,7 +172,7 @@ extern OSStatus AuthorizationPluginCreate(const AuthorizationCallbacks
 
 }
 
-- (OSStatus) PluginDestroy:(AuthorizationPluginRef)inPlugin {
+- (OSStatus)PluginDestroy:(AuthorizationPluginRef)inPlugin {
     PluginRecord *  plugin;
     
     plugin = (PluginRecord *) inPlugin;
@@ -183,7 +183,7 @@ extern OSStatus AuthorizationPluginCreate(const AuthorizationCallbacks
     return noErr;
 }
 
-- (OSStatus) AuthorizationPluginCreate:(const AuthorizationCallbacks *)callbacks
+- (OSStatus)AuthorizationPluginCreate:(const AuthorizationCallbacks *)callbacks
                              PluginRef:(AuthorizationPluginRef *)outPlugin
                        PluginInterface:(const AuthorizationPluginInterface **)
 outPluginInterface {

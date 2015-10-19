@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AuthorizationPlugin.h"
-#import "MechanismHelper.h"
-#include <dlfcn.h>
+#import "FV2AuthorizationPlugin.h"
+#import "FV2MechanismHelper.h"
+#import "fde_serviceProtocol.h"
 
 @interface FV2AuthPluginMechanism : NSObject
 
@@ -20,8 +20,7 @@
 @property uid_t UID;
 
 @property MechanismRecord *mechanism;
-@property void *libcsfde_handle;
-@property void *libodfde_handle;
+@property (strong) NSXPCConnection *connectionToService;
 
 - (id)initWithMechanism:(MechanismRecord*)inMechanism;
 
@@ -32,6 +31,6 @@
  *
  *  @return OSStatus
  */
-- (OSStatus) runMechanism;
+- (OSStatus)runMechanism;
 
 @end

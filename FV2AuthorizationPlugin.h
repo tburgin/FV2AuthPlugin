@@ -12,7 +12,7 @@
 #include <Security/AuthSession.h>
 #include <Security/AuthorizationTags.h>
 
-@interface AuthorizationPlugin : NSObject
+@interface FV2AuthorizationPlugin : NSObject
 
 #pragma mark ***** Define Custom Types
 
@@ -76,7 +76,7 @@ typedef struct MechanismRecord MechanismRecord;
  *
  *  @return BOOL Value. Is the mech valid
  */
-- (BOOL) MechanismValid:(const MechanismRecord *)mechanism;
+- (BOOL)MechanismValid:(const MechanismRecord *)mechanism;
 
 #pragma mark *     Plugin
 
@@ -106,7 +106,7 @@ struct PluginRecord {
  *
  *  @return BOOL Value. Is the plugin valid
  */
-- (BOOL) PluginValid:(const PluginRecord *)plugin;
+- (BOOL)PluginValid:(const PluginRecord *)plugin;
 
 
 #pragma mark ***** Mechanism Entry Points
@@ -152,7 +152,7 @@ struct PluginRecord {
  *
  *  @return OSStatus
  */
-- (OSStatus) MechanismCreate:(AuthorizationPluginRef)inPlugin
+- (OSStatus)MechanismCreate:(AuthorizationPluginRef)inPlugin
                    EngineRef:(AuthorizationEngineRef)inEngine
                  MechanismId:(AuthorizationMechanismId)mechanismId
                 MechanismRef:(AuthorizationMechanismRef *)outMechanism;
@@ -164,7 +164,7 @@ struct PluginRecord {
  *
  *  @return OSStatus
  */
-- (OSStatus) MechanismInvoke:(AuthorizationMechanismRef)inMechanism;
+- (OSStatus)MechanismInvoke:(AuthorizationMechanismRef)inMechanism;
 
 /**
  * Called by the system to deactivate the mechanism, in the traditional
@@ -176,7 +176,7 @@ struct PluginRecord {
  *
  *  @return OSStatus
  */
-- (OSStatus) MechanismDeactivate:(AuthorizationMechanismRef)inMechanism;
+- (OSStatus)MechanismDeactivate:(AuthorizationMechanismRef)inMechanism;
 
 /**
  *  Called by the system when it's done with the mechanism.
@@ -185,7 +185,7 @@ struct PluginRecord {
  *
  *  @return OSStatus
  */
-- (OSStatus) MechanismDestroy:(AuthorizationMechanismRef)inMechanism;
+- (OSStatus)MechanismDestroy:(AuthorizationMechanismRef)inMechanism;
 
 #pragma mark ***** Plugin Entry Points
 
@@ -197,7 +197,7 @@ struct PluginRecord {
  *
  *  @return OSStatus
  */
-- (OSStatus) PluginDestroy:(AuthorizationPluginRef)inPlugin;
+- (OSStatus)PluginDestroy:(AuthorizationPluginRef)inPlugin;
 
 /**
  * The primary entry point of the plugin.  Called by the system
@@ -218,7 +218,7 @@ struct PluginRecord {
  *
  *  @return OSStatus
  */
-- (OSStatus) AuthorizationPluginCreate:(const AuthorizationCallbacks *)callbacks
+- (OSStatus)AuthorizationPluginCreate:(const AuthorizationCallbacks *)callbacks
                              PluginRef:(AuthorizationPluginRef *)outPlugin
                        PluginInterface:(const AuthorizationPluginInterface **)
 outPluginInterface;

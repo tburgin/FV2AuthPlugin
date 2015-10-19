@@ -7,12 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D21A354C1BD53D19002C6C0C /* uninstall.py in Resources */ = {isa = PBXBuildFile; fileRef = D21A354B1BD53D19002C6C0C /* uninstall.py */; };
+		D24278681BD532A90034CD8F /* FV2AuthorizationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D24278671BD532A90034CD8F /* FV2AuthorizationPlugin.m */; };
 		D247C39D1AFBC47F00DECC5E /* FV2AuthPluginMechanism.m in Sources */ = {isa = PBXBuildFile; fileRef = D247C39C1AFBC47F00DECC5E /* FV2AuthPluginMechanism.m */; };
 		D257FDEF1AF95F99008A75C8 /* OpenDirectory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D257FDEE1AF95F99008A75C8 /* OpenDirectory.framework */; };
-		D2772B261AF934D000B390A0 /* AuthorizationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D2772B251AF934D000B390A0 /* AuthorizationPlugin.m */; };
-		D283BF0E1BC84D450015CF4A /* MechanismHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D283BF0D1BC84D450015CF4A /* MechanismHelper.m */; };
+		D283BF0E1BC84D450015CF4A /* FV2MechanismHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D283BF0D1BC84D450015CF4A /* FV2MechanismHelper.m */; };
+		D289DF431BD070EB00AB0E7C /* fde_service.m in Sources */ = {isa = PBXBuildFile; fileRef = D289DF421BD070EB00AB0E7C /* fde_service.m */; };
+		D289DF451BD070EB00AB0E7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D289DF441BD070EB00AB0E7C /* main.m */; };
+		D289DF4B1BD070FF00AB0E7C /* fde-service.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = D289DF3C1BD070EB00AB0E7C /* fde-service.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D2D5CE381B55AD4F00D5FBEC /* FV2AuthPlugin.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = D28735C71A8A82DE0071A420 /* FV2AuthPlugin.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D21A35491BD53CA1002C6C0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D28735BF1A8A82DE0071A420 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D289DF3B1BD070EB00AB0E7C;
+			remoteInfo = "fde-service";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		D2D5CE351B55A55300D5FBEC /* CopyFiles */ = {
@@ -25,18 +39,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D2F73E741BCC84100048F181 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				D289DF4B1BD070FF00AB0E7C /* fde-service.xpc in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D21A354B1BD53D19002C6C0C /* uninstall.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = uninstall.py; sourceTree = "<group>"; };
+		D24278661BD532A90034CD8F /* FV2AuthorizationPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FV2AuthorizationPlugin.h; sourceTree = SOURCE_ROOT; };
+		D24278671BD532A90034CD8F /* FV2AuthorizationPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FV2AuthorizationPlugin.m; sourceTree = SOURCE_ROOT; };
 		D247C39B1AFBC47F00DECC5E /* FV2AuthPluginMechanism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FV2AuthPluginMechanism.h; sourceTree = "<group>"; };
 		D247C39C1AFBC47F00DECC5E /* FV2AuthPluginMechanism.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FV2AuthPluginMechanism.m; sourceTree = "<group>"; };
 		D257FDEE1AF95F99008A75C8 /* OpenDirectory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenDirectory.framework; path = System/Library/Frameworks/OpenDirectory.framework; sourceTree = SDKROOT; };
-		D2772B241AF934D000B390A0 /* AuthorizationPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthorizationPlugin.h; path = ../AuthorizationPlugin.h; sourceTree = "<group>"; };
-		D2772B251AF934D000B390A0 /* AuthorizationPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthorizationPlugin.m; path = ../AuthorizationPlugin.m; sourceTree = "<group>"; };
-		D283BF0C1BC84D450015CF4A /* MechanismHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MechanismHelper.h; sourceTree = "<group>"; };
-		D283BF0D1BC84D450015CF4A /* MechanismHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MechanismHelper.m; sourceTree = "<group>"; };
+		D283BF0C1BC84D450015CF4A /* FV2MechanismHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FV2MechanismHelper.h; sourceTree = "<group>"; };
+		D283BF0D1BC84D450015CF4A /* FV2MechanismHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FV2MechanismHelper.m; sourceTree = "<group>"; };
 		D28735C71A8A82DE0071A420 /* FV2AuthPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FV2AuthPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28735CB1A8A82DE0071A420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D289DF3C1BD070EB00AB0E7C /* fde-service.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = "fde-service.xpc"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D289DF3F1BD070EB00AB0E7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D289DF401BD070EB00AB0E7C /* fde_serviceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fde_serviceProtocol.h; sourceTree = "<group>"; };
+		D289DF411BD070EB00AB0E7C /* fde_service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fde_service.h; sourceTree = "<group>"; };
+		D289DF421BD070EB00AB0E7C /* fde_service.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fde_service.m; sourceTree = "<group>"; };
+		D289DF441BD070EB00AB0E7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,14 +79,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D289DF391BD070EB00AB0E7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		D247C3971AFBC32200DECC5E /* Mechanisms */ = {
 			isa = PBXGroup;
 			children = (
-				D283BF0C1BC84D450015CF4A /* MechanismHelper.h */,
-				D283BF0D1BC84D450015CF4A /* MechanismHelper.m */,
+				D283BF0C1BC84D450015CF4A /* FV2MechanismHelper.h */,
+				D283BF0D1BC84D450015CF4A /* FV2MechanismHelper.m */,
 				D247C39B1AFBC47F00DECC5E /* FV2AuthPluginMechanism.h */,
 				D247C39C1AFBC47F00DECC5E /* FV2AuthPluginMechanism.m */,
 			);
@@ -76,6 +114,7 @@
 				D28735C91A8A82DE0071A420 /* FV2AuthPlugin */,
 				D247C3971AFBC32200DECC5E /* Mechanisms */,
 				D28055391A8AD1A4006880C9 /* libs */,
+				D289DF3D1BD070EB00AB0E7C /* fde-service */,
 				D28735C81A8A82DE0071A420 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				D28735C71A8A82DE0071A420 /* FV2AuthPlugin.bundle */,
+				D289DF3C1BD070EB00AB0E7C /* fde-service.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,8 +131,8 @@
 		D28735C91A8A82DE0071A420 /* FV2AuthPlugin */ = {
 			isa = PBXGroup;
 			children = (
-				D2772B241AF934D000B390A0 /* AuthorizationPlugin.h */,
-				D2772B251AF934D000B390A0 /* AuthorizationPlugin.m */,
+				D24278661BD532A90034CD8F /* FV2AuthorizationPlugin.h */,
+				D24278671BD532A90034CD8F /* FV2AuthorizationPlugin.m */,
 				D28735CA1A8A82DE0071A420 /* Supporting Files */,
 			);
 			path = FV2AuthPlugin;
@@ -102,6 +142,27 @@
 			isa = PBXGroup;
 			children = (
 				D28735CB1A8A82DE0071A420 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D289DF3D1BD070EB00AB0E7C /* fde-service */ = {
+			isa = PBXGroup;
+			children = (
+				D289DF401BD070EB00AB0E7C /* fde_serviceProtocol.h */,
+				D289DF411BD070EB00AB0E7C /* fde_service.h */,
+				D289DF421BD070EB00AB0E7C /* fde_service.m */,
+				D289DF441BD070EB00AB0E7C /* main.m */,
+				D289DF3E1BD070EB00AB0E7C /* Supporting Files */,
+			);
+			path = "fde-service";
+			sourceTree = "<group>";
+		};
+		D289DF3E1BD070EB00AB0E7C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D21A354B1BD53D19002C6C0C /* uninstall.py */,
+				D289DF3F1BD070EB00AB0E7C /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -116,17 +177,36 @@
 				D28735C31A8A82DE0071A420 /* Sources */,
 				D28735C41A8A82DE0071A420 /* Frameworks */,
 				D28735C51A8A82DE0071A420 /* Resources */,
+				D2F73E741BCC84100048F181 /* CopyFiles */,
 				D2D5CE351B55A55300D5FBEC /* CopyFiles */,
 				D2D5CE371B55A56600D5FBEC /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D21A354A1BD53CA1002C6C0C /* PBXTargetDependency */,
 			);
 			name = FV2AuthPlugin;
 			productName = FV2AuthPlugin;
 			productReference = D28735C71A8A82DE0071A420 /* FV2AuthPlugin.bundle */;
 			productType = "com.apple.product-type.bundle";
+		};
+		D289DF3B1BD070EB00AB0E7C /* fde-service */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D289DF461BD070EB00AB0E7C /* Build configuration list for PBXNativeTarget "fde-service" */;
+			buildPhases = (
+				D289DF381BD070EB00AB0E7C /* Sources */,
+				D289DF391BD070EB00AB0E7C /* Frameworks */,
+				D289DF3A1BD070EB00AB0E7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "fde-service";
+			productName = "fde-service";
+			productReference = D289DF3C1BD070EB00AB0E7C /* fde-service.xpc */;
+			productType = "com.apple.product-type.xpc-service";
 		};
 /* End PBXNativeTarget section */
 
@@ -140,6 +220,9 @@
 					D28735C61A8A82DE0071A420 = {
 						CreatedOnToolsVersion = 6.0;
 					};
+					D289DF3B1BD070EB00AB0E7C = {
+						CreatedOnToolsVersion = 6.4;
+					};
 				};
 			};
 			buildConfigurationList = D28735C21A8A82DE0071A420 /* Build configuration list for PBXProject "FV2AuthPlugin" */;
@@ -148,6 +231,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = D28735BE1A8A82DE0071A420;
 			productRefGroup = D28735C81A8A82DE0071A420 /* Products */;
@@ -155,12 +239,21 @@
 			projectRoot = "";
 			targets = (
 				D28735C61A8A82DE0071A420 /* FV2AuthPlugin */,
+				D289DF3B1BD070EB00AB0E7C /* fde-service */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D28735C51A8A82DE0071A420 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D21A354C1BD53D19002C6C0C /* uninstall.py in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D289DF3A1BD070EB00AB0E7C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -191,12 +284,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				D247C39D1AFBC47F00DECC5E /* FV2AuthPluginMechanism.m in Sources */,
-				D2772B261AF934D000B390A0 /* AuthorizationPlugin.m in Sources */,
-				D283BF0E1BC84D450015CF4A /* MechanismHelper.m in Sources */,
+				D283BF0E1BC84D450015CF4A /* FV2MechanismHelper.m in Sources */,
+				D24278681BD532A90034CD8F /* FV2AuthorizationPlugin.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D289DF381BD070EB00AB0E7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D289DF451BD070EB00AB0E7C /* main.m in Sources */,
+				D289DF431BD070EB00AB0E7C /* fde_service.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D21A354A1BD53CA1002C6C0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D289DF3B1BD070EB00AB0E7C /* fde-service */;
+			targetProxy = D21A35491BD53CA1002C6C0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D28735CC1A8A82DE0071A420 /* Debug */ = {
@@ -233,7 +343,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx10.8;
@@ -269,7 +379,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx10.8;
 			};
@@ -301,6 +411,38 @@
 			};
 			name = Release;
 		};
+		D289DF471BD070EB00AB0E7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "fde-service/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.8;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D289DF481BD070EB00AB0E7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "fde-service/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.8;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -318,6 +460,15 @@
 			buildConfigurations = (
 				D28735CF1A8A82DE0071A420 /* Debug */,
 				D28735D01A8A82DE0071A420 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D289DF461BD070EB00AB0E7C /* Build configuration list for PBXNativeTarget "fde-service" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D289DF471BD070EB00AB0E7C /* Debug */,
+				D289DF481BD070EB00AB0E7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -10,9 +10,9 @@
 
 #import <Foundation/Foundation.h>
 #import <DirectoryService/DirectoryService.h>
-#import "AuthorizationPlugin.h"
+#import "FV2AuthorizationPlugin.h"
 
-@interface MechanismHelper : NSObject
+@interface FV2MechanismHelper : NSObject
 /**
  *  Checks to make sure the Mechanism is valid
  *
@@ -20,7 +20,7 @@
  *
  *  @return BOOL
  */
-+ (BOOL) MechanismValid:(const MechanismRecord *)mechanism;
++ (BOOL)MechanismValid:(const MechanismRecord *)mechanism;
 
 /**
  *  Gets the authenticating account type

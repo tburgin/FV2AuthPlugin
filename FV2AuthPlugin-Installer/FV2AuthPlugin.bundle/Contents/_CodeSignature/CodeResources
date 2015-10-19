@@ -3,17 +3,26 @@
 <plist version="1.0">
 <dict>
 	<key>files</key>
-	<dict/>
+	<dict>
+		<key>Resources/uninstall.py</key>
+		<data>
+		/HVJ/MqCHSYboufsVNAfTjD77uw=
+		</data>
+	</dict>
 	<key>files2</key>
 	<dict>
-		<key>XPCServices/add-users.xpc</key>
+		<key>Resources/uninstall.py</key>
+		<data>
+		/HVJ/MqCHSYboufsVNAfTjD77uw=
+		</data>
+		<key>XPCServices/fde-service.xpc</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			3jt290ob+hW+TIy9xDC32i/9UjM=
+			/mCSCIBpa9HIIsFxrIhjKVKksHE=
 			</data>
 			<key>requirement</key>
-			<string>anchor apple generic and identifier "gov.nih.FV2AuthPlugin.add-users" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = QZQALU4M8H)</string>
+			<string>anchor apple generic and identifier "gov.nih.fde-service" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = QZQALU4M8H)</string>
 		</dict>
 	</dict>
 	<key>rules</key>
