@@ -40,8 +40,7 @@
     
     // Get kDSNAttrAuthenticationAuthority for the Authenticating User
     err = noErr;
-    NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [+] Attempting to receive \
-          kDSNAttrAuthenticationAuthority.");
+    NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [+] Attempting to receive kDSNAttrAuthenticationAuthority.");
     
     err = mechanism->fPlugin->fCallbacks->
     GetContextValue(mechanism->fEngine,
@@ -49,11 +48,9 @@
                     &flags, &value);
     
     if (err == noErr) {
-        NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [+] kDSNAttrAuthenticationAuthority \
-              received. Attempting plist to dict.");
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [+] kDSNAttrAuthenticationAuthority received. Attempting plist to dict.");
     } else {
-        NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [!] kDSNAttrAuthenticationAuthority \
-              was unreadable.");
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [!] kDSNAttrAuthenticationAuthority was unreadable.");
         return accountType;
     }
     
@@ -72,21 +69,18 @@
             for (NSString * e in authData) {
                 if ([e rangeOfString:@";LocalCachedUser;"].location !=
                     NSNotFound) {
-                    NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [+] Account Type is \
-                          kMobile");
+                    NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [+] Account Type is kMobile");
                     accountType = kMobile;
                     break;
                 }
                 else if ([e rangeOfString:@";NetLogon;"].location != \
                          NSNotFound) {
-                    NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [+] Account Type is \
-                          kNetwork");
+                    NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [+] Account Type is kNetwork");
                     accountType = kNetwork;
                     break;
                 }
                 else if ([e rangeOfString:@"@LKDC"].location != NSNotFound) {
-                    NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [+] Account Type is \
-                          kLocal");
+                    NSLog(@"FV2AuthPlugin:MechanismInvoke:getAccountType [+] Account Type is kLocal");
                     accountType = kLocal;
                     break;
                 }
@@ -112,8 +106,7 @@
     
     // Get the AuthorizationEnvironmentUsername
     err = noErr;
-    NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [+] Attempting to receive \
-          kAuthorizationEnvironmentUsername");
+    NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [+] Attempting to receive kAuthorizationEnvironmentUsername");
     
     err = mechanism->fPlugin->fCallbacks->
     GetContextValue(mechanism->fEngine,
@@ -125,11 +118,9 @@
                                             length:value->length
                                           encoding:NSUTF8StringEncoding];
         userName = [userName stringByReplacingOccurrencesOfString:@"\0" withString:@""];
-        NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [+] kAuthorizationEnvironmentUsername \
-              [%@] was used.", userName);
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [+] kAuthorizationEnvironmentUsername [%@] was used.", userName);
     } else {
-        NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [!] kAuthorizationEnvironmentUsername \
-              was unreadable.");
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [!] kAuthorizationEnvironmentUsername was unreadable.");
     }
     
     return userName;
@@ -147,8 +138,7 @@
     
     // Get the kAuthorizationEnvironmentPassword
     err = noErr;
-    NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [+] Attempting to receive \
-          kAuthorizationEnvironmentUsername");
+    NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [+] Attempting to receive kAuthorizationEnvironmentUsername");
     
     err = mechanism->fPlugin->fCallbacks->
     GetContextValue(mechanism->fEngine,
@@ -160,11 +150,9 @@
                                             length:value->length
                                           encoding:NSUTF8StringEncoding];
         password = [password stringByReplacingOccurrencesOfString:@"\0" withString:@""];
-        NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [+] kAuthorizationEnvironmentPassword \
-              received.");
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [+] kAuthorizationEnvironmentPassword received.");
     } else {
-        NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [!] kAuthorizationEnvironmentPassword \
-              was unreadable.");
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [!] kAuthorizationEnvironmentPassword was unreadable.");
     }
     
     return password;
@@ -180,8 +168,7 @@
     NSString                    *tokenName = NULL;
     
     err = noErr;
-    NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [+] Attempting to receive the authenticating \
-          SmartCard Keychain");
+    NSLog(@"FV2AuthPlugin:MechanismInvoke:getUserName [+] Attempting to receive the authenticating SmartCard Keychain");
     
     err = mechanism->fPlugin->fCallbacks->
     GetHintValue(mechanism->fEngine, "token-name", &value);
@@ -191,8 +178,7 @@
                                              length:value->length
                                            encoding:NSUTF8StringEncoding];
         tokenName = [tokenName stringByReplacingOccurrencesOfString:@"\0" withString:@""];
-        NSLog(@"FV2AuthPlugin:MechanismInvoke:getTokenName: [+] Success. SmartCard Keychain [%@] \
-              was used.", tokenName);
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getTokenName: [+] Success. SmartCard Keychain [%@] was used.", tokenName);
     } else {
         NSLog(@"FV2AuthPlugin:MechanismInvoke:getTokenName: [!] token-name was unreadable");
     }
@@ -242,8 +228,7 @@
         gid = *(const uid_t *) value->data;
         NSLog(@"FV2AuthPlugin:MechanismInvoke:getGID [+] gid: [%u] Retrieved", gid);
     } else {
-        NSLog(@"FV2AuthPlugin:MechanismInvoke:getGID [!] Error Retrieving the \
-              authenticating gid");
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:getGID [!] Error Retrieving the authenticating gid");
         NSLog(@"FV2AuthPlugin:MechanismInvoke:getGID [!] Error: [%d]", (int)err);
     }
     
