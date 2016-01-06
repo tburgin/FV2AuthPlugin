@@ -3,28 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>files</key>
-	<dict>
-		<key>Resources/uninstall.py</key>
-		<data>
-		/HVJ/MqCHSYboufsVNAfTjD77uw=
-		</data>
-	</dict>
+	<dict/>
 	<key>files2</key>
-	<dict>
-		<key>Resources/uninstall.py</key>
-		<data>
-		/HVJ/MqCHSYboufsVNAfTjD77uw=
-		</data>
-		<key>XPCServices/fde-service.xpc</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			/mCSCIBpa9HIIsFxrIhjKVKksHE=
-			</data>
-			<key>requirement</key>
-			<string>anchor apple generic and identifier "gov.nih.fde-service" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = QZQALU4M8H)</string>
-		</dict>
-	</dict>
+	<dict/>
 	<key>rules</key>
 	<dict>
 		<key>^Resources/</key>

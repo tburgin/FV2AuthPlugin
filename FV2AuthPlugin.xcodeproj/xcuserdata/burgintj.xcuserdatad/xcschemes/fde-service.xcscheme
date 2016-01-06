@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0600"
-   version = "1.8">
+   LastUpgradeVersion = "0640"
+   version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D28735C61A8A82DE0071A420"
-               BuildableName = "FV2AuthPlugin.bundle"
-               BlueprintName = "FV2AuthPlugin"
+               BlueprintIdentifier = "D289DF3B1BD070EB00AB0E7C"
+               BuildableName = "fde-service.xpc"
+               BlueprintName = "fde-service"
                ReferencedContainer = "container:FV2AuthPlugin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,6 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -40,14 +38,13 @@
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
-      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D28735C61A8A82DE0071A420"
-            BuildableName = "FV2AuthPlugin.bundle"
-            BlueprintName = "FV2AuthPlugin"
+            BlueprintIdentifier = "D289DF3B1BD070EB00AB0E7C"
+            BuildableName = "fde-service.xpc"
+            BlueprintName = "fde-service"
             ReferencedContainer = "container:FV2AuthPlugin.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D28735C61A8A82DE0071A420"
-            BuildableName = "FV2AuthPlugin.bundle"
-            BlueprintName = "FV2AuthPlugin"
+            BlueprintIdentifier = "D289DF3B1BD070EB00AB0E7C"
+            BuildableName = "fde-service.xpc"
+            BlueprintName = "fde-service"
             ReferencedContainer = "container:FV2AuthPlugin.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -7,10 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AuthorizationPlugin.h"
-#include <dlfcn.h>
+#import "FV2AuthorizationPlugin.h"
+#import "FV2MechanismHelper.h"
+#import "fde_serviceProtocol.h"
 
 @interface FV2AuthPluginMechanism : NSObject
+
+@property (strong) NSString *username;
+@property (strong) NSString *password;
+@property (strong) NSString *smartCardKeychain;
+@property account_t accountType;
+@property uid_t UID;
+
+@property MechanismRecord *mechanism;
+@property (strong) NSXPCConnection *connectionToService;
+
+- (id)initWithMechanism:(MechanismRecord*)inMechanism;
+
 /**
  *  Mechanism for adding users to FV2
  *
@@ -18,6 +31,6 @@
  *
  *  @return OSStatus
  */
-+ (OSStatus) runMechanism:(MechanismRecord*)mechanism;
+- (OSStatus)runMechanism;
 
 @end
