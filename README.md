@@ -2,6 +2,8 @@
 
 Here is an Authorization Plugin that is designed to automatically, seamlessly and silently add users to FileVault 2 while the user is authenticating at the Login Window.
 
+Keep an eye on [crypt2](https://github.com/grahamgilbert/crypt2). Graham and I will be adding the functionality of FV2AuthPlugin to crypt2
+
 ## How to install
 
 The plugin must live here: `/Library/Security/SecurityAgentPlugins/FV2AuthPlugin.bundle`
@@ -13,12 +15,6 @@ FV2AuthPlugin is called from the system.login.console in the authorization datab
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>class</key>
-	<string>evaluate-mechanisms</string>
-	<key>comment</key>
-	<string>Login mechanism based rule.  Not for general use, yet.</string>
-	<key>created</key>
-	<real>440105275.951406</real>
 	<key>mechanisms</key>
 	<array>
 		<string>builtin:policy-banner</string>
@@ -29,22 +25,14 @@ FV2AuthPlugin is called from the system.login.console in the authorization datab
 		<string>builtin:auto-login,privileged</string>
 		<string>builtin:authenticate,privileged</string>
 		<string>PKINITMechanism:auth,privileged</string>
-		<string>FV2AuthPlugin:add-users,privileged</string>
 		<string>builtin:login-success</string>
 		<string>loginwindow:success</string>
 		<string>HomeDirMechanism:login,privileged</string>
 		<string>HomeDirMechanism:status</string>
 		<string>MCXMechanism:login</string>
+		<string>FV2AuthPlugin:add-users,privileged</string>
 		<string>loginwindow:done</string>
 	</array>
-	<key>modified</key>
-	<real>445305832.28244603</real>
-	<key>shared</key>
-	<true/>
-	<key>tries</key>
-	<integer>10000</integer>
-	<key>version</key>
-	<integer>1</integer>
 </dict>
 </plist>
 ```
@@ -96,7 +84,9 @@ extern BOOL ODFDEAddUser(CFStringRef username, CFStringRef password, CFStringRef
 
 We now have everything we need to add a user to FileVault2. Keep in mind that ODFDEAddUser is undocumented and will most likely be changed in future release of OS X.
 
-This symbol still exists in 10.10.4 and works for our purposes.
+To mitigate any potential issues I have shoved all interaction with the `libodfde.dylib` to an `XPC Service` that runs in a separate process.
+
+This symbol still exists in 10.11.2 and works for our purposes.
 
 ## Resources
 
