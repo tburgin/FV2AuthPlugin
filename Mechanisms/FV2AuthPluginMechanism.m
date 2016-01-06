@@ -21,6 +21,14 @@
     
     NSLog(@"FV2AuthPlugin:MechanismInvoke:AddUsers **************************");
     
+    uid_t uid = [FV2MechanismHelper getUID:_mechanism];
+    if (uid < 501) {
+        NSLog(@"FV2AuthPlugin:MechanismInvoke:AddUsers Skipping user [%u]", uid);
+        OSStatus err = _mechanism->fPlugin->fCallbacks->
+        SetResult(_mechanism->fEngine, kAuthorizationResultAllow);
+        return err;
+    }
+    
     _connectionToService = [[NSXPCConnection alloc]
                             initWithServiceName:@"gov.nih.fde-service"];
 
